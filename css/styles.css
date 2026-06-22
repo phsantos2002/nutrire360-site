@@ -1289,6 +1289,8 @@ button {
 .navbar.scrolled .btn-nav-vip {
   background: var(--gradient-logo);
 }
+/* Texto curto do botão da navbar no mobile */
+.nav-vip-short { display: none; }
 
 /* Bolinha dourada piscante */
 .dot-blink {
@@ -1358,10 +1360,16 @@ button {
 .ph-hero-content {
   position: relative;
   z-index: 2;
+  width: 100%;
   max-width: 720px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.ph-subtitle,
+.ph-title {
+  margin-left: auto;
+  margin-right: auto;
 }
 .ph-eyebrow {
   display: inline-flex;
@@ -1971,12 +1979,26 @@ button {
   .final-cta {
     padding: 66px 0;
   }
-  .ph-hero { padding-top: calc(var(--navbar-height) + 24px); }
-  .ph-hero-arc { width: 420px; height: 420px; opacity: 0.25; }
+  .ph-hero { padding-top: calc(var(--navbar-height) + 10px); }
+  .ph-hero-arc { width: 380px; height: 380px; opacity: 0.22; }
   .scroll-indicator { display: none; }
 
-  .countdown { gap: 16px; }
-  .countdown-item { min-width: 52px; }
-  .countdown-number { font-size: 38px; }
+  .countdown { gap: 14px; }
+  .countdown-item { min-width: 50px; }
+  .countdown-number { font-size: 36px; }
   .countdown-separator { display: none; }
+
+  /* Botão da navbar: texto curto cabe melhor */
+  .nav-vip-full { display: none; }
+  .nav-vip-short { display: inline; }
+  .btn-nav-vip { padding: 11px 20px; }
+
+  /* CTAs grandes não podem estourar a largura no mobile */
+  .btn-xl {
+    padding: 15px 22px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    max-width: 100%;
+    white-space: normal;
+  }
 }
