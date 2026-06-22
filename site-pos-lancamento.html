@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nutrire 360 · Clínica de Saúde Integrada em Jacareí. Nutrição, estética e medicina trabalhando juntas pela sua transformação." />
+  <meta name="theme-color" content="#C9A84C" />
+  <title>Nutrire 360 · Saúde Integrada</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nutrire 360 · Saúde Integrada" />
+  <meta property="og:description" content="Nutrição, estética e medicina sob o mesmo teto. Sua transformação começa aqui." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/logo.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Icons (lucide) -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+</head>
+<body>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <header id="navbar" class="navbar">
+    <div class="navbar-inner">
+      <a href="#" class="navbar-logo" aria-label="Nutrire 360">
+        <img src="assets/logo.png" alt="Nutrire 360 · Saúde Integrada" />
+      </a>
+
+      <nav class="navbar-actions">
+        <a
+          href="https://wa.me/5512999999999?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Nutrire%20360"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary"
+        >
+          <i data-lucide="message-circle" class="btn-icon"></i>
+          AGENDE AGORA
+        </a>
+        <a href="#planos" class="btn btn-outline-light">
+          NOSSOS PLANOS
+        </a>
+        <button class="navbar-menu-btn" id="menuBtn" aria-label="Abrir menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Side menu drawer -->
+    <div class="menu-drawer" id="menuDrawer">
+      <div class="menu-drawer-inner">
+        <button class="menu-close" id="menuClose" aria-label="Fechar menu">
+          <i data-lucide="x"></i>
+        </button>
+        <nav class="menu-links">
+          <a href="#servicos">Serviços</a>
+          <a href="#sobre">Sobre a Nutrire</a>
+          <a href="#planos">Nossos Planos</a>
+          <a href="#localizacao">Onde Estamos</a>
+          <a href="#blog">Blog</a>
+          <a
+            href="https://wa.me/5512999999999"
+            target="_blank"
+            rel="noopener"
+            class="menu-cta"
+          >
+            Falar pelo WhatsApp
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================
+       HERO
+       ============================================ -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img
+        src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=80&auto=format&fit=crop"
+        alt=""
+        aria-hidden="true"
+      />
+      <div class="hero-bg-overlay"></div>
+    </div>
+
+    <div class="hero-arc" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <span class="hero-eyebrow">Saúde Integrada · Jacareí</span>
+        <h1 class="hero-title">
+          <em>Cuidar de você</em><br />
+          por inteiro<br />
+          é uma arte.
+        </h1>
+        <p class="hero-subtitle">
+          Na <strong>Nutrire 360</strong>, nutrição, estética e medicina se
+          encontram em um mesmo cuidado: pensado com delicadeza, conduzido com
+          ciência e dedicado à sua melhor versão.
+        </p>
+        <a
+          href="https://wa.me/5512999999999?text=Olá!%20Quero%20conhecer%20a%20Nutrire%20360"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-outline-dark btn-lg"
+        >
+          AGENDE SUA AVALIAÇÃO
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SERVIÇOS (mirrors "30 procedimentos")
+       ============================================ -->
+  <section class="services" id="servicos">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Os Três Pilares do Cuidado 360°</span>
+        <h2 class="section-title">UM CUIDADO COMPLETO, FEITO PARA VOCÊ</h2>
+      </div>
+
+      <div class="services-grid">
+        <!-- 1. Avaliação Nutricional -->
+        <article class="service-card">
+          <div class="service-card-image">
+            <img
+              src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80&auto=format&fit=crop"
+              alt="Avaliação Nutricional"
+            />
+          </div>
+          <div class="service-card-body">
+            <span class="service-card-pillar">Nutrição</span>
+            <h3 class="service-card-title">AVALIAÇÃO NUTRICIONAL</h3>
+            <p class="service-card-desc">
+              Um plano alimentar desenhado sob medida para você, a partir de
+              bioimpedância, exames e do seu ritmo de vida. O primeiro passo,
+              feito com escuta e precisão.
+            </p>
+            <div class="service-card-actions">
+              <a href="#contato" class="btn btn-outline-sm">SAIBA MAIS</a>
+              <a
+                href="https://wa.me/5512999999999?text=Quero%20saber%20mais%20sobre%20Avaliação%20Nutricional"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-dark-sm"
+              >
+                FALE COM UM CONSULTOR
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Emagrecimento -->
+        <article class="service-card">
+          <div class="service-card-image">
+            <img
+              src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80&auto=format&fit=crop"
+              alt="Programa de Emagrecimento"
+            />
+          </div>
+          <div class="service-card-body">
+            <span class="service-card-pillar">Estética</span>
+            <h3 class="service-card-title">EMAGRECIMENTO</h3>
+            <p class="service-card-desc">
+              Um protocolo integrado que une nutrição clínica, estética avançada
+              e acompanhamento médico, para emagrecer com leveza, equilíbrio e
+              resultados que permanecem.
+            </p>
+            <div class="service-card-actions">
+              <a href="#contato" class="btn btn-outline-sm">SAIBA MAIS</a>
+              <a
+                href="https://wa.me/5512999999999?text=Quero%20saber%20mais%20sobre%20o%20programa%20de%20Emagrecimento"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-dark-sm"
+              >
+                FALE COM UM CONSULTOR
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Estética Corporal -->
+        <article class="service-card">
+          <div class="service-card-image">
+            <img
+              src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80&auto=format&fit=crop"
+              alt="Estética Corporal"
+            />
+          </div>
+          <div class="service-card-body">
+            <span class="service-card-pillar">Estética</span>
+            <h3 class="service-card-title">ESTÉTICA CORPORAL</h3>
+            <p class="service-card-desc">
+              Procedimentos corporais para modelar contornos, reduzir medidas e
+              devolver firmeza à pele, com tecnologia de ponta e o cuidado que
+              o seu corpo merece.
+            </p>
+            <div class="service-card-actions">
+              <a href="#contato" class="btn btn-outline-sm">SAIBA MAIS</a>
+              <a
+                href="https://wa.me/5512999999999?text=Quero%20saber%20mais%20sobre%20Estética%20Corporal"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-dark-sm"
+              >
+                FALE COM UM CONSULTOR
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Estética Facial -->
+        <article class="service-card">
+          <div class="service-card-image">
+            <img
+              src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80&auto=format&fit=crop"
+              alt="Estética Facial"
+            />
+          </div>
+          <div class="service-card-body">
+            <span class="service-card-pillar">Estética</span>
+            <h3 class="service-card-title">ESTÉTICA FACIAL</h3>
+            <p class="service-card-desc">
+              Cuidados faciais que revelam o viço e a luminosidade da sua pele:
+              limpeza profunda, peelings, microagulhamento e protocolos
+              delicadamente personalizados.
+            </p>
+            <div class="service-card-actions">
+              <a href="#contato" class="btn btn-outline-sm">SAIBA MAIS</a>
+              <a
+                href="https://wa.me/5512999999999?text=Quero%20saber%20mais%20sobre%20Estética%20Facial"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-dark-sm"
+              >
+                FALE COM UM CONSULTOR
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Consulta Médica -->
+        <article class="service-card">
+          <div class="service-card-image">
+            <img
+              src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80&auto=format&fit=crop"
+              alt="Consulta Médica"
+            />
+          </div>
+          <div class="service-card-body">
+            <span class="service-card-pillar">Medicina</span>
+            <h3 class="service-card-title">CONSULTA MÉDICA</h3>
+            <p class="service-card-desc">
+              Avaliação clínica completa, leitura cuidadosa de exames, prescrição
+              e acompanhamento contínuo: a base científica e segura de toda a
+              sua jornada de saúde.
+            </p>
+            <div class="service-card-actions">
+              <a href="#contato" class="btn btn-outline-sm">SAIBA MAIS</a>
+              <a
+                href="https://wa.me/5512999999999?text=Quero%20saber%20mais%20sobre%20Consulta%20Médica"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-dark-sm"
+              >
+                FALE COM UM CONSULTOR
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Acompanhamento Integrado -->
+        <article class="service-card">
+          <div class="service-card-image">
+            <img
+              src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80&auto=format&fit=crop"
+              alt="Acompanhamento Integrado"
+            />
+          </div>
+          <div class="service-card-body">
+            <span class="service-card-pillar">Integrado</span>
+            <h3 class="service-card-title">ACOMPANHAMENTO 360°</h3>
+            <p class="service-card-desc">
+              Nutricionista, esteta e médico cuidam de você em conjunto, em
+              diálogo constante. Uma jornada coordenada, com visão completa e
+              resultados que se sustentam.
+            </p>
+            <div class="service-card-actions">
+              <a href="#planos" class="btn btn-outline-sm">SAIBA MAIS</a>
+              <a
+                href="https://wa.me/5512999999999?text=Quero%20saber%20mais%20sobre%20o%20Acompanhamento%20360"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-dark-sm"
+              >
+                FALE COM UM CONSULTOR
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SOBRE A NUTRIRE (dark overlay section)
+       ============================================ -->
+  <section class="about" id="sobre">
+    <div class="about-bg">
+      <img
+        src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&q=80&auto=format&fit=crop"
+        alt=""
+        aria-hidden="true"
+      />
+      <div class="about-overlay"></div>
+    </div>
+
+    <div class="container about-container">
+      <div class="about-video">
+        <button class="play-button" aria-label="Assistir vídeo">
+          <i data-lucide="play"></i>
+        </button>
+        <span class="play-label">CLIQUE E SAIBA MAIS</span>
+      </div>
+
+      <div class="about-text">
+        <span class="about-eyebrow">Nossa Essência</span>
+        <h2 class="about-title">
+          Conheça a<br />Nutrire 360
+        </h2>
+        <p class="about-desc">
+          Em Jacareí, a Nutrire 360 nasceu de uma convicção simples
+          e poderosa: cuidar bem é cuidar do todo. Reunimos
+          <strong>nutrição, estética e medicina</strong> sob o mesmo teto, com
+          profissionais que conversam entre si sobre uma única prioridade: você.
+        </p>
+        <p class="about-desc">
+          Aqui, cada detalhe é pensado com sensibilidade e respaldo científico.
+          Porque saúde de verdade floresce quando o corpo é olhado por inteiro,
+          com tempo, atenção e acolhimento.
+        </p>
+        <div class="about-actions">
+          <a href="#planos" class="btn btn-outline-light btn-lg">
+            NOSSOS PLANOS
+          </a>
+          <a
+            href="https://wa.me/5512999999999?text=Quero%20conhecer%20a%20Nutrire%20360"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-primary btn-lg"
+          >
+            FALE CONOSCO
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PLANOS (placeholder, definimos depois)
+       ============================================ -->
+  <section class="plans-teaser" id="planos">
+    <div class="container">
+      <div class="plans-card">
+        <span class="eyebrow">Em Breve</span>
+        <h2 class="plans-title">Planos Mensais Nutrire 360</h2>
+        <p class="plans-desc">
+          Estamos desenhando três experiências de cuidado contínuo, com acesso
+          integrado aos nossos serviços e benefícios exclusivos. Uma forma
+          delicada e inteligente de manter sua saúde sempre em primeiro lugar.
+        </p>
+        <a
+          href="https://wa.me/5512999999999?text=Quero%20entrar%20na%20lista%20VIP%20da%20Nutrire%20360"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary btn-lg"
+        >
+          ENTRAR NA LISTA VIP
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       LOCALIZAÇÃO (single location in Jacareí)
+       ============================================ -->
+  <section class="location" id="localizacao">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Onde Estamos</span>
+        <h2 class="section-title">VENHA NOS VISITAR</h2>
+      </div>
+
+      <div class="location-grid">
+        <div class="location-info">
+          <div class="location-card">
+            <span class="location-tag">Unidade Jacareí</span>
+            <h3 class="location-name">Nutrire 360 · Saúde Integrada</h3>
+            <p class="location-address">
+              <i data-lucide="map-pin"></i>
+              [Endereço completo, Bairro]<br />
+              Jacareí, SP
+            </p>
+            <p class="location-hours">
+              <i data-lucide="clock"></i>
+              Segunda a Sexta: 08h às 19h<br />
+              Sábados: 08h às 13h
+            </p>
+            <p class="location-contact">
+              <i data-lucide="phone"></i>
+              (12) 9 9999-9999
+            </p>
+            <div class="location-actions">
+              <a
+                href="https://wa.me/5512999999999"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-dark-sm"
+              >
+                AGENDAR PELO WHATSAPP
+              </a>
+              <a
+                href="https://maps.google.com/?q=Jacareí+SP"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-outline-sm"
+              >
+                COMO CHEGAR
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="location-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29365.27013!2d-45.890!3d-23.197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zU8OjbyBKb3PDqSBkb3MgQ2FtcG9zLCBTUA!5e0!3m2!1spt-BR!2sbr!4v1700000000000"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localização Nutrire 360"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       BLOG
+       ============================================ -->
+  <section class="blog" id="blog">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Conteúdo &amp; Bem-Estar</span>
+        <h2 class="section-title">INSPIRAÇÃO PARA CUIDAR DE VOCÊ</h2>
+      </div>
+
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-card-image">
+            <img
+              src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80&auto=format&fit=crop"
+              alt=""
+            />
+          </div>
+          <time class="blog-card-date">13/06/2026</time>
+          <h3 class="blog-card-title">
+            Por que cuidar da saúde de forma integrada faz toda a diferença
+          </h3>
+          <p class="blog-card-excerpt">
+            Quando nutrição, estética e medicina conversam entre si, os
+            resultados aparecem antes e duram mais. Entenda o conceito 360...
+          </p>
+          <a href="#" class="btn btn-outline-sm">SAIBA MAIS</a>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-card-image">
+            <img
+              src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=600&q=80&auto=format&fit=crop"
+              alt=""
+            />
+          </div>
+          <time class="blog-card-date">10/06/2026</time>
+          <h3 class="blog-card-title">
+            Emagrecimento sustentável: o que realmente funciona em 2026
+          </h3>
+          <p class="blog-card-excerpt">
+            Esqueça dietas restritivas. Os protocolos que dão certo combinam
+            nutrição clínica, hábitos e suporte multidisciplinar...
+          </p>
+          <a href="#" class="btn btn-outline-sm">SAIBA MAIS</a>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-card-image">
+            <img
+              src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80&auto=format&fit=crop"
+              alt=""
+            />
+          </div>
+          <time class="blog-card-date">05/06/2026</time>
+          <h3 class="blog-card-title">
+            Estética com saúde: como escolher tratamentos seguros e eficazes
+          </h3>
+          <p class="blog-card-excerpt">
+            Antes de qualquer procedimento, vem a avaliação. Conheça o método
+            da Nutrire 360 para tratamentos estéticos com respaldo médico...
+          </p>
+          <a href="#" class="btn btn-outline-sm">SAIBA MAIS</a>
+        </article>
+      </div>
+
+      <div class="blog-cta">
+        <a href="#" class="btn btn-primary btn-lg">VEJA MAIS CONTEÚDOS</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer" id="contato">
+    <div class="container footer-container">
+      <div class="footer-col footer-brand">
+        <img src="assets/logo.png" alt="Nutrire 360" class="footer-logo" />
+        <p class="footer-tagline">
+          Nutrição, estética e medicina<br />
+          em um só cuidado.
+        </p>
+        <div class="footer-social">
+          <a
+            href="https://instagram.com/nutrire360"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+          >
+            <i data-lucide="instagram"></i>
+          </a>
+          <a
+            href="https://facebook.com/nutrire360"
+            target="_blank"
+            rel="noopener"
+            aria-label="Facebook"
+          >
+            <i data-lucide="facebook"></i>
+          </a>
+          <a
+            href="https://wa.me/5512999999999"
+            target="_blank"
+            rel="noopener"
+            aria-label="WhatsApp"
+          >
+            <i data-lucide="message-circle"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre a Nutrire</a>
+        <a href="#planos">Nossos Planos</a>
+        <a href="#blog">Blog</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Atendimento</h4>
+        <a
+          href="https://wa.me/5512999999999"
+          target="_blank"
+          rel="noopener"
+          >WhatsApp</a
+        >
+        <a href="#localizacao">Como Chegar</a>
+        <a href="#">Política de Privacidade</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <p>
+          [Endereço completo]<br />
+          Jacareí, SP<br />
+          (12) 9 9999-9999<br />
+          contato@nutrire360.com.br
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-copyright">
+      <div class="container">
+        <span>© 2026 Nutrire 360. Todos os direitos reservados.</span>
+        <span class="footer-dev">Saúde Integrada · Jacareí</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp button -->
+  <a
+    href="https://wa.me/5512999999999?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta"
+    target="_blank"
+    rel="noopener"
+    class="whatsapp-float"
+    aria-label="Falar pelo WhatsApp"
+  >
+    <i data-lucide="message-circle"></i>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
