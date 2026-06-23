@@ -1327,16 +1327,18 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 22%;
 }
 .ph-hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    circle at 50% 38%,
-    rgba(252, 250, 244, 0.82) 0%,
-    rgba(252, 250, 244, 0.9) 55%,
-    rgba(247, 242, 230, 0.96) 100%
+  /* véu leve: mantém a foto bem visível, só ajuda o texto a respirar */
+  background: linear-gradient(
+    180deg,
+    rgba(252, 250, 244, 0.55) 0%,
+    rgba(252, 250, 244, 0.30) 32%,
+    rgba(252, 250, 244, 0.34) 60%,
+    rgba(252, 250, 244, 0.70) 100%
   );
 }
 .ph-hero-arc {
@@ -1381,6 +1383,7 @@ button {
   letter-spacing: 3.5px;
   color: var(--gold-deep);
   margin-bottom: 12px;
+  text-shadow: 0 1px 12px rgba(252, 250, 244, 0.9);
 }
 .ph-title {
   font-family: var(--font-display);
@@ -1390,14 +1393,16 @@ button {
   letter-spacing: -1.1px;
   color: var(--dark);
   margin-bottom: 12px;
+  text-shadow: 0 2px 26px rgba(252, 250, 244, 0.92), 0 1px 4px rgba(252, 250, 244, 0.7);
 }
 .ph-subtitle {
   font-size: clamp(13px, 1.8vw, 16px);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.55;
-  color: var(--text-body);
+  color: var(--text);
   max-width: 460px;
   margin-bottom: 22px;
+  text-shadow: 0 1px 16px rgba(252, 250, 244, 0.95);
 }
 
 /* Countdown */
