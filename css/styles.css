@@ -1615,8 +1615,16 @@ button {
 
 /* ---------- Seção 4: Lista VIP ---------- */
 .vip {
+  position: relative;
   padding: 100px 0;
-  background: var(--gradient-olive);
+  /* continuação da foto da capa, com véu de oliva translúcido (verde ofuscado) */
+  background-color: var(--olive-dark);
+  background-image:
+    linear-gradient(160deg, rgba(76, 81, 48, 0.66) 0%, rgba(108, 114, 70, 0.6) 100%),
+    url("../assets/equipe.jpg?v=1");
+  background-size: cover;
+  background-position: center 82%;
+  background-repeat: no-repeat;
 }
 .vip-card {
   position: relative;
