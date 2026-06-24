@@ -1635,8 +1635,8 @@ button {
 .vip {
   position: relative;
   padding: 100px 0;
-  /* apenas o véu de oliva translúcido; a foto vem do .cover-wrap (fundo único) */
-  background: linear-gradient(160deg, rgba(76, 81, 48, 0.6) 0%, rgba(108, 114, 70, 0.54) 100%);
+  /* mesmo véu claro da capa (sem verde) — scroll fluido, sem contraste de cor */
+  background: rgba(252, 250, 244, 0.5);
 }
 .vip-card {
   position: relative;
