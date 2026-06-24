@@ -1317,7 +1317,7 @@ button {
   position: relative;
   /* Imagem com o topo (parede vazia) já recortado na origem: o topo da cabeça
      do homem nasce na altura do logo, sem precisar de zoom. */
-  background-image: url("../assets/equipe-capa.jpg?v=1");
+  background-image: url("../assets/equipe-capa.jpg?v=2");
   background-size: cover;
   background-position: center 80%;
   background-repeat: no-repeat;
