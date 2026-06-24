@@ -1309,7 +1309,7 @@ button {
 /* ---------- Fundo único (foto) cobrindo capa + Lista VIP ---------- */
 .cover-wrap {
   position: relative;
-  background-image: url("../assets/equipe.jpg?v=2");
+  background-image: url("../assets/equipe.jpg?v=3");
   background-size: cover;
   background-position: center 22%;
   background-repeat: no-repeat;
@@ -1331,6 +1331,7 @@ button {
   position: absolute;
   inset: 0;
   z-index: 0;
+  background: url("../assets/equipe.jpg?v=3") center 42% / cover no-repeat;
 }
 .ph-hero-bg img {
   width: 100%;
