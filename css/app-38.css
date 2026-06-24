@@ -1309,7 +1309,7 @@ button {
 /* ---------- Fundo único (foto) cobrindo capa + Lista VIP ---------- */
 .cover-wrap {
   position: relative;
-  background-image: url("../assets/equipe.jpg?v=5");
+  background-image: url("../assets/equipe.jpg?v=6");
   background-size: cover;
   background-position: center 100%;
   background-repeat: no-repeat;
