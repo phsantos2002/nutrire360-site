@@ -1344,11 +1344,11 @@ button {
   /* topo limpo (rostos livres) e véu claro só na base, atrás do conteúdo */
   background: linear-gradient(
     180deg,
-    rgba(252, 250, 244, 0.1) 0%,
-    rgba(252, 250, 244, 0.03) 26%,
-    rgba(252, 250, 244, 0.2) 44%,
-    rgba(252, 250, 244, 0.62) 64%,
-    rgba(252, 250, 244, 0.9) 100%
+    rgba(252, 250, 244, 0.08) 0%,
+    rgba(252, 250, 244, 0.02) 24%,
+    rgba(252, 250, 244, 0.3) 42%,
+    rgba(252, 250, 244, 0.72) 60%,
+    rgba(252, 250, 244, 0.95) 100%
   );
 }
 .ph-hero-arc {
