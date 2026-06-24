@@ -1347,15 +1347,13 @@ button {
 .ph-hero-overlay {
   position: absolute;
   inset: 0;
-  /* topo limpo (rostos livres) e véu claro só na base, atrás do conteúdo */
-  background: linear-gradient(
-    180deg,
-    rgba(252, 250, 244, 0.04) 0%,
-    rgba(252, 250, 244, 0.02) 34%,
-    rgba(252, 250, 244, 0.16) 60%,
-    rgba(252, 250, 244, 0.4) 82%,
-    rgba(252, 250, 244, 0.55) 100%
-  );
+  /* sem banda na base (evita sensação de quebra); brilho suave só atrás do texto */
+  background:
+    radial-gradient(ellipse 80% 42% at 50% 85%,
+      rgba(252, 250, 244, 0.62) 0%,
+      rgba(252, 250, 244, 0.26) 52%,
+      rgba(252, 250, 244, 0) 80%),
+    linear-gradient(180deg, rgba(252, 250, 244, 0) 60%, rgba(252, 250, 244, 0.05) 100%);
 }
 .ph-hero-arc {
   position: absolute;
@@ -1403,26 +1401,27 @@ button {
 }
 .ph-title {
   font-family: var(--font-display);
-  font-size: clamp(29px, 3.9vw, 46px);
-  font-weight: 300;
-  line-height: 1.06;
-  letter-spacing: -1.1px;
+  font-size: clamp(32px, 4.2vw, 52px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -1.3px;
   color: var(--dark);
-  margin-bottom: 12px;
-  text-shadow: 0 0 18px rgba(252, 250, 244, 0.98), 0 1px 30px rgba(252, 250, 244, 0.95), 0 1px 3px rgba(252, 250, 244, 0.85);
+  margin-bottom: 14px;
+  text-shadow: 0 0 24px rgba(252, 250, 244, 1), 0 2px 26px rgba(252, 250, 244, 0.98), 0 1px 2px rgba(252, 250, 244, 0.92);
 }
 /* destaque dourado mais escuro no hero, para contrastar com o brilho claro */
 .ph-title .gold-em {
   background-image: linear-gradient(115deg, #565b33 0%, #7e6420 50%, #9d7d2a 100%);
 }
 .ph-subtitle {
-  font-size: clamp(13px, 1.8vw, 16px);
+  font-size: clamp(13.5px, 1.7vw, 16.5px);
   font-weight: 500;
-  line-height: 1.55;
+  line-height: 1.6;
   color: var(--text);
-  max-width: 460px;
+  max-width: 430px;
+  margin-top: 2px;
   margin-bottom: 22px;
-  text-shadow: 0 0 14px rgba(252, 250, 244, 0.98), 0 1px 18px rgba(252, 250, 244, 0.95);
+  text-shadow: 0 0 14px rgba(252, 250, 244, 1), 0 1px 16px rgba(252, 250, 244, 0.96);
 }
 
 /* Countdown */
@@ -2166,7 +2165,7 @@ button {
 }
 .vip-grid .vip-card {
   padding: 26px 24px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(9px);
   -webkit-backdrop-filter: blur(9px);
   border: 1px solid rgba(255, 255, 255, 0.55);
@@ -2185,3 +2184,36 @@ button {
 .local-addr { font-size: 13px; margin-bottom: 18px; }
 .vip-grid .vip-card .btn-xl { padding: 13px 20px; font-size: 11.5px; }
 .vip-note { font-size: 11.5px; }
+
+/* Contador da página 2 — maior, nítido e em destaque */
+.vip-countdown { margin-bottom: 40px; }
+.vip-cd-label {
+  color: var(--gold-deep);
+  text-shadow: 0 1px 8px rgba(252, 250, 244, 0.92);
+  margin-bottom: 16px;
+}
+.vip-countdown .countdown {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 18px;
+  padding: 16px clamp(20px, 3vw, 38px);
+  box-shadow: 0 18px 44px rgba(43, 46, 38, 0.18);
+  gap: clamp(16px, 2.6vw, 34px);
+  margin-bottom: 0;
+}
+.vip-countdown .countdown-number {
+  font-size: clamp(40px, 4.4vw, 58px);
+  color: var(--dark);
+  text-shadow: none;
+  font-weight: 400;
+}
+.vip-countdown .countdown-label {
+  color: var(--olive-dark);
+  font-size: 10px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+.vip-countdown .countdown-separator { height: 56px; opacity: 0.45; }
