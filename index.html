@@ -24,7 +24,7 @@
   <!-- Icons (lucide) -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 
-  <link rel="stylesheet" href="css/app-32.css" />
+  <link rel="stylesheet" href="css/app-33.css" />
   <link rel="icon" type="image/png" href="assets/logo.png?v=3" />
 </head>
 <body>
@@ -84,7 +84,7 @@
       </p>
 
       <!-- Countdown (data real definida em data-launch; fallback automático "Em breve") -->
-      <div id="countdown" class="countdown" data-launch="2026-07-15T09:00:00-03:00" aria-label="Contagem regressiva para a inauguração">
+      <div id="countdown" class="countdown" data-launch="2026-07-16T09:00:00-03:00" aria-label="Contagem regressiva para a inauguração">
         <div class="countdown-item">
           <span class="countdown-number" id="cd-days">00</span>
           <span class="countdown-label">Dias</span>
@@ -106,17 +106,7 @@
         </div>
       </div>
 
-      <a
-        href="https://wa.me/5512999999999?text=Ol%C3%A1!%20Quero%20entrar%20na%20Lista%20VIP%20da%20Nutrire%20360%20para%20ter%20acesso%20antecipado%20%C3%A0%20inaugura%C3%A7%C3%A3o."
-        target="_blank"
-        rel="noopener"
-        class="btn btn-primary btn-xl btn-logo-grad"
-      >
-        <i data-lucide="message-circle" class="btn-icon"></i>
-        ENTRAR NA LISTA VIP
-      </a>
-
-      <p class="ph-cta-note">Acesso antecipado · Condições exclusivas de inauguração</p>
+      <p class="ph-cta-note">Acesso antecipado · Condições exclusivas de inauguração · Role para conhecer</p>
     </div>
 
     <a href="#lista-vip" class="scroll-indicator" aria-label="Role para saber mais">
@@ -130,60 +120,71 @@
        ============================================ -->
   <section class="vip" id="lista-vip">
     <div class="container">
-      <div class="vip-card">
-        <span class="vip-eyebrow">
-          <i data-lucide="star"></i> Lista VIP de Inauguração
-        </span>
-        <h2 class="vip-title">
-          Seja um dos primeiros
-          <span class="gold-em">a viver a experiência Nutrire 360.</span>
-        </h2>
+      <div class="vip-grid">
 
-        <ul class="vip-benefits">
-          <li class="vip-benefit">
-            <i data-lucide="check"></i>
-            <div>
-              <strong>Acesso antecipado</strong>
-              <span>Agendamento prioritário antes da abertura ao público.</span>
-            </div>
-          </li>
-          <li class="vip-benefit">
-            <i data-lucide="check"></i>
-            <div>
-              <strong>Condições exclusivas</strong>
-              <span>Vantagens de inauguração disponíveis só para a lista.</span>
-            </div>
-          </li>
-          <li class="vip-benefit">
-            <i data-lucide="check"></i>
-            <div>
-              <strong>Bastidores da clínica</strong>
-              <span>Updates exclusivos sobre o espaço e a equipe.</span>
-            </div>
-          </li>
-          <li class="vip-benefit">
-            <i data-lucide="check"></i>
-            <div>
-              <strong>Convite para o evento de abertura</strong>
-              <span>Uma vivência exclusiva com os três profissionais.</span>
-            </div>
-          </li>
-        </ul>
+        <!-- ESQUERDA: Onde estaremos (Pátio Villa Branca) -->
+        <article class="vip-card vip-card-sm">
+          <span class="vip-eyebrow"><i data-lucide="map-pin"></i> Onde Estaremos</span>
+          <h2 class="vip-title-2">
+            Nosso espaço, no
+            <span class="gold-em">coração de Jacareí.</span>
+          </h2>
+          <div class="local-photo">
+            <img src="assets/local.jpg?v=1" alt="Pátio Villa Branca — Jacareí" loading="lazy" />
+          </div>
+          <p class="local-name">Pátio Villa Branca</p>
+          <p class="local-addr">
+            <i data-lucide="map-pin"></i>
+            <span>Av. das Letras, 659 · Vila Branca<br />Jacareí, SP · 12301-330</span>
+          </p>
+          <a
+            href="https://maps.google.com/?q=P%C3%A1tio+Villa+Branca+Jacare%C3%AD"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-outline-dark btn-pill"
+          >
+            <i data-lucide="map-pin" class="btn-icon"></i>
+            COMO CHEGAR
+          </a>
+        </article>
 
-        <a
-          href="https://wa.me/5512999999999?text=Ol%C3%A1!%20Quero%20entrar%20na%20Lista%20VIP%20da%20Nutrire%20360%20para%20ter%20acesso%20antecipado%20%C3%A0%20inaugura%C3%A7%C3%A3o."
-          target="_blank"
-          rel="noopener"
-          class="btn btn-primary btn-xl btn-logo-grad"
-        >
-          <i data-lucide="message-circle" class="btn-icon"></i>
-          QUERO ENTRAR NA LISTA VIP
-        </a>
+        <!-- DIREITA: Lista VIP -->
+        <article class="vip-card vip-card-sm">
+          <span class="vip-eyebrow"><i data-lucide="star"></i> Lista VIP de Inauguração</span>
+          <h2 class="vip-title-2">
+            Seja um dos primeiros
+            <span class="gold-em">a viver a experiência Nutrire 360.</span>
+          </h2>
+          <ul class="vip-benefits">
+            <li class="vip-benefit">
+              <i data-lucide="check"></i>
+              <div><strong>Acesso antecipado</strong><span>Agendamento prioritário antes da abertura.</span></div>
+            </li>
+            <li class="vip-benefit">
+              <i data-lucide="check"></i>
+              <div><strong>Condições exclusivas</strong><span>Vantagens de inauguração só para a lista.</span></div>
+            </li>
+            <li class="vip-benefit">
+              <i data-lucide="check"></i>
+              <div><strong>Bastidores da clínica</strong><span>Updates sobre o espaço e a equipe.</span></div>
+            </li>
+            <li class="vip-benefit">
+              <i data-lucide="check"></i>
+              <div><strong>Convite para a abertura</strong><span>Vivência exclusiva com os três profissionais.</span></div>
+            </li>
+          </ul>
+          <a
+            href="https://wa.me/5512999999999?text=Ol%C3%A1!%20Quero%20entrar%20na%20Lista%20VIP%20da%20Nutrire%20360%20para%20ter%20acesso%20antecipado%20%C3%A0%20inaugura%C3%A7%C3%A3o."
+            target="_blank"
+            rel="noopener"
+            class="btn btn-primary btn-xl btn-logo-grad"
+          >
+            <i data-lucide="message-circle" class="btn-icon"></i>
+            QUERO ENTRAR NA LISTA VIP
+          </a>
+          <p class="vip-note">Sem custo · Sem compromisso.</p>
+        </article>
 
-        <p class="vip-note">
-          Sem custo · Sem compromisso · Para quem realmente quer cuidar da saúde
-          de forma integrada.
-        </p>
       </div>
     </div>
   </section>

@@ -1309,9 +1309,9 @@ button {
 /* ---------- Fundo único (foto) cobrindo capa + Lista VIP ---------- */
 .cover-wrap {
   position: relative;
-  background-image: url("../assets/equipe.jpg?v=3");
+  background-image: url("../assets/equipe.jpg?v=4");
   background-size: cover;
-  background-position: center 22%;
+  background-position: center 38%;
   background-repeat: no-repeat;
 }
 
@@ -1331,7 +1331,6 @@ button {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: url("../assets/equipe.jpg?v=3") center 42% / cover no-repeat;
 }
 .ph-hero-bg img {
   width: 100%;
@@ -1345,11 +1344,11 @@ button {
   /* topo limpo (rostos livres) e véu claro só na base, atrás do conteúdo */
   background: linear-gradient(
     180deg,
-    rgba(252, 250, 244, 0.08) 0%,
-    rgba(252, 250, 244, 0.02) 24%,
-    rgba(252, 250, 244, 0.3) 42%,
-    rgba(252, 250, 244, 0.72) 60%,
-    rgba(252, 250, 244, 0.95) 100%
+    rgba(252, 250, 244, 0.04) 0%,
+    rgba(252, 250, 244, 0.02) 34%,
+    rgba(252, 250, 244, 0.16) 60%,
+    rgba(252, 250, 244, 0.4) 82%,
+    rgba(252, 250, 244, 0.55) 100%
   );
 }
 .ph-hero-arc {
@@ -2048,4 +2047,77 @@ button {
   .countdown-label { font-size: 9px; margin-top: 4px; }
   .ph-cta-note { margin-top: 7px; }
   .scroll-indicator { bottom: 8px; }
+}
+
+/* ============================================
+   PÁGINA 2 — dois cards (Local + Lista VIP)
+   ============================================ */
+.vip-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+  align-items: stretch;
+}
+.vip-grid .vip-card {
+  max-width: none;
+  margin: 0;
+  padding: 34px 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.vip-title-2 {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 1.9vw, 26px);
+  font-weight: 300;
+  letter-spacing: -0.4px;
+  line-height: 1.2;
+  color: var(--dark);
+  margin-bottom: 20px;
+}
+.vip-grid .vip-benefits {
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-bottom: 22px;
+  flex: 1;
+}
+.vip-grid .vip-card .btn-xl {
+  padding: 15px 22px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* Card do local (Pátio Villa Branca) */
+.local-photo {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--border-soft);
+}
+.local-photo img { width: 100%; height: 100%; object-fit: cover; }
+.local-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+.local-addr {
+  display: flex;
+  gap: 9px;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 13.5px;
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--text-body);
+  margin-bottom: 22px;
+  flex: 1;
+}
+.local-addr svg { width: 16px; height: 16px; color: var(--primary); flex-shrink: 0; margin-top: 2px; }
+.local-card .btn-pill { align-self: center; margin-top: auto; }
+
+@media (max-width: 900px) {
+  .vip-grid { grid-template-columns: 1fr; gap: 22px; }
 }
