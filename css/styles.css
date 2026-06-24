@@ -1322,9 +1322,9 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   text-align: center;
-  padding: calc(var(--navbar-height) + 6px) var(--container-padding) 54px;
+  padding: calc(var(--navbar-height) + 6px) var(--container-padding) 52px;
   overflow: hidden;
 }
 .ph-hero-bg {
@@ -1341,22 +1341,15 @@ button {
 .ph-hero-overlay {
   position: absolute;
   inset: 0;
-  /* brilho radial claro atrás do texto (legibilidade) + véu vertical leve;
-     as pessoas seguem visíveis nas laterais e na base */
-  background:
-    radial-gradient(
-      ellipse 66% 58% at 50% 45%,
-      rgba(252, 250, 244, 0.82) 0%,
-      rgba(252, 250, 244, 0.5) 42%,
-      rgba(252, 250, 244, 0) 74%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(252, 250, 244, 0.42) 0%,
-      rgba(252, 250, 244, 0.24) 32%,
-      rgba(252, 250, 244, 0.2) 64%,
-      rgba(252, 250, 244, 0.3) 100%
-    );
+  /* topo limpo (rostos livres) e véu claro só na base, atrás do conteúdo */
+  background: linear-gradient(
+    180deg,
+    rgba(252, 250, 244, 0.1) 0%,
+    rgba(252, 250, 244, 0.03) 26%,
+    rgba(252, 250, 244, 0.2) 44%,
+    rgba(252, 250, 244, 0.62) 64%,
+    rgba(252, 250, 244, 0.9) 100%
+  );
 }
 .ph-hero-arc {
   position: absolute;
