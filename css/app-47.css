@@ -2134,3 +2134,54 @@ button {
   .navbar-logo img { height: 60px; }
   .navbar.scrolled .navbar-logo img { height: 50px; }
 }
+
+/* ============================================
+   PÁGINA 2 — contador + cards menores e translúcidos
+   ============================================ */
+.vip-countdown {
+  text-align: center;
+  margin-bottom: 34px;
+}
+.vip-cd-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--gold-deep);
+  margin-bottom: 14px;
+  text-shadow: 0 1px 10px rgba(252, 250, 244, 0.9);
+}
+.vip-countdown .countdown-number {
+  color: var(--dark);
+  text-shadow: 0 1px 12px rgba(252, 250, 244, 0.85);
+}
+.vip-countdown .countdown-label { color: var(--olive-dark); }
+
+/* Cards menores (mais estreitos) e translúcidos */
+.vip-grid {
+  max-width: 920px;
+  margin: 0 auto;
+  gap: 22px;
+}
+.vip-grid .vip-card {
+  padding: 26px 24px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 16px 40px rgba(43, 46, 38, 0.18);
+}
+.vip-title-2 {
+  font-size: clamp(17px, 1.6vw, 22px);
+  margin-bottom: 16px;
+}
+.vip-grid .vip-benefits { gap: 12px; margin-bottom: 18px; }
+.vip-benefit strong { font-size: 13.5px; }
+.vip-benefit span { font-size: 12.5px; line-height: 1.45; }
+.vip-eyebrow { margin-bottom: 14px; }
+.local-photo { margin-bottom: 14px; }
+.local-name { font-size: 20px; margin-bottom: 8px; }
+.local-addr { font-size: 13px; margin-bottom: 18px; }
+.vip-grid .vip-card .btn-xl { padding: 13px 20px; font-size: 11.5px; }
+.vip-note { font-size: 11.5px; }

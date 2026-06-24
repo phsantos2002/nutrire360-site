@@ -24,7 +24,7 @@
   <!-- Icons (lucide) -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 
-  <link rel="stylesheet" href="css/app-46.css" />
+  <link rel="stylesheet" href="css/app-47.css" />
   <link rel="icon" type="image/png" href="assets/logo.png?v=3" />
 </head>
 <body>
@@ -82,31 +82,6 @@
       <p class="ph-subtitle">
         Nutrição, estética e medicina trabalhando juntas, sob o mesmo teto.
       </p>
-
-      <!-- Countdown (data real definida em data-launch; fallback automático "Em breve") -->
-      <div id="countdown" class="countdown" data-launch="2026-07-16T09:00:00-03:00" aria-label="Contagem regressiva para a inauguração">
-        <div class="countdown-item">
-          <span class="countdown-number" id="cd-days">00</span>
-          <span class="countdown-label">Dias</span>
-        </div>
-        <span class="countdown-separator" aria-hidden="true"></span>
-        <div class="countdown-item">
-          <span class="countdown-number" id="cd-hours">00</span>
-          <span class="countdown-label">Horas</span>
-        </div>
-        <span class="countdown-separator" aria-hidden="true"></span>
-        <div class="countdown-item">
-          <span class="countdown-number" id="cd-mins">00</span>
-          <span class="countdown-label">Min</span>
-        </div>
-        <span class="countdown-separator" aria-hidden="true"></span>
-        <div class="countdown-item">
-          <span class="countdown-number" id="cd-secs">00</span>
-          <span class="countdown-label">Seg</span>
-        </div>
-      </div>
-
-      <p class="ph-cta-note">Acesso antecipado · Condições exclusivas de inauguração · Role para conhecer</p>
     </div>
 
     <a href="#lista-vip" class="scroll-indicator" aria-label="Role para saber mais">
@@ -120,6 +95,33 @@
        ============================================ -->
   <section class="vip" id="lista-vip">
     <div class="container">
+
+      <!-- Contador de inauguração -->
+      <div class="vip-countdown">
+        <span class="vip-cd-label">Faltam para a inauguração · 16 de julho</span>
+        <div id="countdown" class="countdown" data-launch="2026-07-16T09:00:00-03:00" aria-label="Contagem regressiva para a inauguração">
+          <div class="countdown-item">
+            <span class="countdown-number" id="cd-days">00</span>
+            <span class="countdown-label">Dias</span>
+          </div>
+          <span class="countdown-separator" aria-hidden="true"></span>
+          <div class="countdown-item">
+            <span class="countdown-number" id="cd-hours">00</span>
+            <span class="countdown-label">Horas</span>
+          </div>
+          <span class="countdown-separator" aria-hidden="true"></span>
+          <div class="countdown-item">
+            <span class="countdown-number" id="cd-mins">00</span>
+            <span class="countdown-label">Min</span>
+          </div>
+          <span class="countdown-separator" aria-hidden="true"></span>
+          <div class="countdown-item">
+            <span class="countdown-number" id="cd-secs">00</span>
+            <span class="countdown-label">Seg</span>
+          </div>
+        </div>
+      </div>
+
       <div class="vip-grid">
 
         <!-- ESQUERDA: Onde estaremos (Pátio Villa Branca) -->
