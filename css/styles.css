@@ -1341,15 +1341,22 @@ button {
 .ph-hero-overlay {
   position: absolute;
   inset: 0;
-  /* véu leve: foto visível; mais forte no topo (texto) e suave embaixo
-     para revelar as pessoas e emendar com a seção VIP */
-  background: linear-gradient(
-    180deg,
-    rgba(252, 250, 244, 0.5) 0%,
-    rgba(252, 250, 244, 0.3) 30%,
-    rgba(252, 250, 244, 0.26) 62%,
-    rgba(252, 250, 244, 0.34) 100%
-  );
+  /* brilho radial claro atrás do texto (legibilidade) + véu vertical leve;
+     as pessoas seguem visíveis nas laterais e na base */
+  background:
+    radial-gradient(
+      ellipse 66% 58% at 50% 45%,
+      rgba(252, 250, 244, 0.82) 0%,
+      rgba(252, 250, 244, 0.5) 42%,
+      rgba(252, 250, 244, 0) 74%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(252, 250, 244, 0.42) 0%,
+      rgba(252, 250, 244, 0.24) 32%,
+      rgba(252, 250, 244, 0.2) 64%,
+      rgba(252, 250, 244, 0.3) 100%
+    );
 }
 .ph-hero-arc {
   position: absolute;
@@ -1403,16 +1410,20 @@ button {
   letter-spacing: -1.1px;
   color: var(--dark);
   margin-bottom: 12px;
-  text-shadow: 0 2px 26px rgba(252, 250, 244, 0.92), 0 1px 4px rgba(252, 250, 244, 0.7);
+  text-shadow: 0 0 18px rgba(252, 250, 244, 0.98), 0 1px 30px rgba(252, 250, 244, 0.95), 0 1px 3px rgba(252, 250, 244, 0.85);
+}
+/* destaque dourado mais escuro no hero, para contrastar com o brilho claro */
+.ph-title .gold-em {
+  background-image: linear-gradient(115deg, #565b33 0%, #7e6420 50%, #9d7d2a 100%);
 }
 .ph-subtitle {
   font-size: clamp(13px, 1.8vw, 16px);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.55;
   color: var(--text);
   max-width: 460px;
   margin-bottom: 22px;
-  text-shadow: 0 1px 16px rgba(252, 250, 244, 0.95);
+  text-shadow: 0 0 14px rgba(252, 250, 244, 0.98), 0 1px 18px rgba(252, 250, 244, 0.95);
 }
 
 /* Countdown */
@@ -1437,14 +1448,16 @@ button {
   letter-spacing: -1px;
   color: var(--dark);
   font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 14px rgba(252, 250, 244, 0.96), 0 1px 16px rgba(252, 250, 244, 0.9);
 }
 .countdown-label {
   margin-top: 8px;
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--text-muted);
+  color: var(--olive-dark);
+  text-shadow: 0 0 8px rgba(252, 250, 244, 0.95);
 }
 .countdown-separator {
   width: 1px;
@@ -1463,7 +1476,8 @@ button {
   margin-top: 11px;
   font-size: 12px;
   letter-spacing: 0.4px;
-  color: var(--text-muted);
+  color: var(--olive-dark);
+  text-shadow: 0 0 10px rgba(252, 250, 244, 0.95), 0 1px 12px rgba(252, 250, 244, 0.9);
 }
 
 /* Indicador de scroll */
@@ -1478,10 +1492,11 @@ button {
   align-items: center;
   gap: 6px;
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--text-muted);
+  color: var(--olive-dark);
+  text-shadow: 0 0 8px rgba(252, 250, 244, 0.95);
 }
 .scroll-indicator svg {
   width: 18px;
