@@ -319,7 +319,7 @@ button {
   margin-top: 44px;
 }
 .navbar-logo img {
-  height: 165px;
+  height: 210px;
   width: auto;
   transition: height 0.3s ease;
 }
@@ -2040,7 +2040,7 @@ button {
    ============================================ */
 @media (max-height: 840px) {
   :root { --navbar-height: 82px; }
-  .navbar-logo img { height: 140px; }
+  .navbar-logo img { height: 185px; }
   .navbar.scrolled { height: 68px; }
   .navbar.scrolled .navbar-logo img { height: 54px; }
 
