@@ -2245,3 +2245,33 @@ button {
   margin-top: 8px;
 }
 .vip-countdown .countdown-separator { height: 56px; opacity: 0.45; }
+
+/* ============================================
+   MOBILE — capa mostra os TRÊS profissionais
+   A foto aparece em largura total no topo (sem cortar as laterais),
+   faz transição suave para o creme e os textos vêm logo abaixo.
+   (Colocado no fim para vencer o cascade dos demais @media.)
+   ============================================ */
+@media (max-width: 768px) {
+  .cover-wrap {
+    background-size: 100% auto;       /* largura cheia: os três aparecem */
+    background-position: center top;
+    background-color: var(--bg-page); /* creme preenche abaixo da foto */
+  }
+  .ph-hero {
+    justify-content: flex-start;
+    /* empurra o texto para logo abaixo da foto (altura da foto ≈ 100vw) */
+    padding-top: calc(100vw - 24px);
+    padding-bottom: 40px;
+  }
+  /* fade suave da base da foto para o creme (sem banda dura) */
+  .ph-hero-overlay {
+    background: linear-gradient(180deg,
+      rgba(252, 250, 244, 0) 32%,
+      rgba(252, 250, 244, 0.60) 44%,
+      rgba(252, 250, 244, 0.96) 54%,
+      var(--bg-page) 60%);
+  }
+  .ph-hero-arc { display: none; }     /* o círculo não faz sentido nesse layout */
+  .ph-title { font-size: clamp(25px, 7.5vw, 34px); }
+}
