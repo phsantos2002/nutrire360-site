@@ -2027,3 +2027,24 @@ button {
     white-space: normal;
   }
 }
+
+/* ============================================
+   TELAS BAIXAS (notebooks) — capa compacta
+   para o conteúdo não cobrir os rostos
+   ============================================ */
+@media (max-height: 840px) {
+  :root { --navbar-height: 82px; }
+  .navbar-logo img { height: 62px; }
+  .navbar.scrolled { height: 68px; }
+  .navbar.scrolled .navbar-logo img { height: 52px; }
+
+  .ph-hero { padding-bottom: 34px; }
+  .ph-eyebrow { margin-bottom: 6px; }
+  .ph-title { font-size: clamp(21px, 2.7vw, 32px); line-height: 1.04; margin-bottom: 6px; }
+  .ph-subtitle { font-size: 12.5px; line-height: 1.4; margin-bottom: 10px; max-width: 400px; }
+  .countdown { margin-bottom: 10px; gap: 16px; }
+  .countdown-number { font-size: clamp(24px, 2.6vw, 32px); }
+  .countdown-label { font-size: 9px; margin-top: 4px; }
+  .ph-cta-note { margin-top: 7px; }
+  .scroll-indicator { bottom: 8px; }
+}
