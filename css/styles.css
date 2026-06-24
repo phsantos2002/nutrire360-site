@@ -1306,6 +1306,15 @@ button {
   50%      { opacity: 0.35; box-shadow: 0 0 0 6px rgba(201, 168, 76, 0); }
 }
 
+/* ---------- Fundo único (foto) cobrindo capa + Lista VIP ---------- */
+.cover-wrap {
+  position: relative;
+  background-image: url("../assets/equipe.jpg?v=1");
+  background-size: cover;
+  background-position: center 22%;
+  background-repeat: no-repeat;
+}
+
 /* ---------- Seção 1: Hero pré-lançamento ---------- */
 .ph-hero {
   position: relative;
@@ -1332,13 +1341,14 @@ button {
 .ph-hero-overlay {
   position: absolute;
   inset: 0;
-  /* véu leve: mantém a foto bem visível, só ajuda o texto a respirar */
+  /* véu leve: foto visível; mais forte no topo (texto) e suave embaixo
+     para revelar as pessoas e emendar com a seção VIP */
   background: linear-gradient(
     180deg,
-    rgba(252, 250, 244, 0.55) 0%,
-    rgba(252, 250, 244, 0.30) 32%,
-    rgba(252, 250, 244, 0.34) 60%,
-    rgba(252, 250, 244, 0.70) 100%
+    rgba(252, 250, 244, 0.5) 0%,
+    rgba(252, 250, 244, 0.3) 30%,
+    rgba(252, 250, 244, 0.26) 62%,
+    rgba(252, 250, 244, 0.34) 100%
   );
 }
 .ph-hero-arc {
@@ -1617,14 +1627,8 @@ button {
 .vip {
   position: relative;
   padding: 100px 0;
-  /* continuação da foto da capa, com véu de oliva translúcido (verde ofuscado) */
-  background-color: var(--olive-dark);
-  background-image:
-    linear-gradient(160deg, rgba(76, 81, 48, 0.66) 0%, rgba(108, 114, 70, 0.6) 100%),
-    url("../assets/equipe.jpg?v=1");
-  background-size: cover;
-  background-position: center 82%;
-  background-repeat: no-repeat;
+  /* apenas o véu de oliva translúcido; a foto vem do .cover-wrap (fundo único) */
+  background: linear-gradient(160deg, rgba(76, 81, 48, 0.6) 0%, rgba(108, 114, 70, 0.54) 100%);
 }
 .vip-card {
   position: relative;
