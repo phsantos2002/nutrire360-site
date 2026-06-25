@@ -20,26 +20,37 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll();
 
-  // --- Menu drawer ---
+  // --- Mega-menu (abas da estrutura) ---
   const menuBtn = document.getElementById('menuBtn');
   const menuDrawer = document.getElementById('menuDrawer');
-  const menuClose = document.getElementById('menuClose');
-  const menuLinks = document.querySelectorAll('.menu-links a');
+  const menuOverlay = document.getElementById('menuOverlay');
+  const menuLinks = menuDrawer ? menuDrawer.querySelectorAll('a') : [];
 
+  const isMenuOpen = () => menuDrawer?.classList.contains('open');
   const openMenu = () => {
+    if (!menuDrawer) return;
     menuDrawer.classList.add('open');
+    menuOverlay?.removeAttribute('hidden');
+    menuOverlay?.classList.add('open');
+    menuBtn?.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
   };
   const closeMenu = () => {
+    if (!menuDrawer) return;
     menuDrawer.classList.remove('open');
+    menuOverlay?.classList.remove('open');
+    menuBtn?.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    // esconde o overlay depois da transição
+    setTimeout(() => { if (!isMenuOpen()) menuOverlay?.setAttribute('hidden', ''); }, 300);
   };
+  const toggleMenu = () => (isMenuOpen() ? closeMenu() : openMenu());
 
-  menuBtn?.addEventListener('click', openMenu);
-  menuClose?.addEventListener('click', closeMenu);
+  menuBtn?.addEventListener('click', toggleMenu);
+  menuOverlay?.addEventListener('click', closeMenu);
   menuLinks.forEach((link) => link.addEventListener('click', closeMenu));
 
-  // Close on backdrop click (Escape key)
+  // Fecha com Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeMenu();
   });
