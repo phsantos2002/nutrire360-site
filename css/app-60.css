@@ -1535,14 +1535,13 @@ button {
 .ph-hero-overlay {
   position: absolute;
   inset: 0;
-  /* sem banda na base (evita sensação de quebra); brilho atrás do texto,
-     forte o bastante para os textos lerem sobre o terno/roupas escuras */
+  /* brilho geral bem sutil só na base, p/ o "role para saber mais";
+     o realce forte fica no glow atrás do texto (.ph-hero-content::before),
+     que acompanha o texto e não encosta nos rostos */
   background:
-    radial-gradient(ellipse 68% 38% at 50% 72%,
-      rgba(252, 250, 244, 0.95) 0%,
-      rgba(252, 250, 244, 0.84) 40%,
-      rgba(252, 250, 244, 0.46) 66%,
-      rgba(252, 250, 244, 0) 86%);
+    radial-gradient(ellipse 58% 26% at 50% 92%,
+      rgba(252, 250, 244, 0.50) 0%,
+      rgba(252, 250, 244, 0) 78%);
 }
 .ph-hero-arc {
   position: absolute;
@@ -1570,6 +1569,26 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+/* Glow sutil ancorado no bloco de texto: fica atrás do texto (acompanha
+   o texto em qualquer tela) e some antes de chegar aos rostos */
+.ph-hero-content::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 128%;
+  height: 152%;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 50%,
+      rgba(252, 250, 244, 0.90) 0%,
+      rgba(252, 250, 244, 0.78) 38%,
+      rgba(252, 250, 244, 0.40) 62%,
+      rgba(252, 250, 244, 0) 80%);
+  filter: blur(7px);
 }
 .ph-subtitle,
 .ph-title {
