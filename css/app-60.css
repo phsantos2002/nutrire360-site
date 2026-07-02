@@ -2487,11 +2487,22 @@ button {
    ============================================ */
 @media (max-width: 768px) {
   .cover-wrap {
-    /* imagem mobile com um pouco da parede acima das cabeças (respiro vem da
-       própria foto — sem faixa creme no topo) */
-    background-image: url("../assets/equipe-capa-mobile.jpg?v=3");
-    background-size: 100% auto;       /* largura cheia: os três aparecem */
-    background-position: center top;
+    /* Degradê foto->creme ancorado na ALTURA DA FOTO (não na altura do hero):
+       a foto some no creme sempre no mesmo ponto, então não sobra tira escura
+       na emenda com a seção VIP, independente de onde o hero termina.
+       Altura da foto = 100vw * (1588/1365) = 100vw * 1.1634. */
+    background-image:
+      linear-gradient(180deg,
+        rgba(252, 250, 244, 0)    8%,
+        rgba(252, 250, 244, 0.28) 30%,
+        rgba(252, 250, 244, 0.68) 46%,
+        rgba(252, 250, 244, 0.90) 56%,
+        rgba(252, 250, 244, 0.99) 65%,
+        var(--bg-page)            74%),
+      url("../assets/equipe-capa-mobile.jpg?v=3");
+    background-size: 100% calc(100vw * 1.1634), 100% calc(100vw * 1.1634);
+    background-position: center top, center top;
+    background-repeat: no-repeat, no-repeat;
     background-color: var(--bg-page); /* creme preenche abaixo da foto */
   }
   .ph-hero {
@@ -2502,15 +2513,9 @@ button {
     padding-top: calc(100vw - 185px);
     padding-bottom: 30px;
   }
-  /* fade: rostos nítidos em cima, véu claro atrás do texto (legível) */
-  .ph-hero-overlay {
-    background: linear-gradient(180deg,
-      rgba(252, 250, 244, 0) 8%,
-      rgba(252, 250, 244, 0.30) 30%,
-      rgba(252, 250, 244, 0.70) 46%,
-      rgba(252, 250, 244, 0.93) 58%,
-      var(--bg-page) 68%);
-  }
+  /* o fade foto->creme agora vive no fundo do .cover-wrap (ancorado na
+     altura da foto), então o overlay do hero não é mais necessário */
+  .ph-hero-overlay { background: none; }
   .ph-hero-arc { display: none; }     /* o círculo não faz sentido nesse layout */
   .ph-eyebrow { margin-bottom: 10px; }
   .ph-title { font-size: clamp(26px, 7.8vw, 36px); margin-bottom: 12px; }
