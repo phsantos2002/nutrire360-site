@@ -1503,9 +1503,9 @@ button {
   position: relative;
   /* Imagem com o topo (parede vazia) já recortado na origem: o topo da cabeça
      do homem nasce na altura do logo, sem precisar de zoom. */
-  background-image: url("../assets/equipe-capa.jpg?v=2");
+  background-image: url("../assets/equipe-capa.jpg?v=3");
   background-size: cover;
-  background-position: center 80%;
+  background-position: center 18%;
   background-repeat: no-repeat;
 }
 
@@ -2461,7 +2461,7 @@ button {
   .cover-wrap {
     /* imagem mobile com um pouco da parede acima das cabeças (respiro vem da
        própria foto — sem faixa creme no topo) */
-    background-image: url("../assets/equipe-capa-mobile.jpg?v=1");
+    background-image: url("../assets/equipe-capa-mobile.jpg?v=2");
     background-size: 100% auto;       /* largura cheia: os três aparecem */
     background-position: center top;
     background-color: var(--bg-page); /* creme preenche abaixo da foto */
