@@ -1535,13 +1535,12 @@ button {
 .ph-hero-overlay {
   position: absolute;
   inset: 0;
-  /* brilho geral bem sutil só na base, p/ o "role para saber mais";
-     o realce forte fica no glow atrás do texto (.ph-hero-content::before),
-     que acompanha o texto e não encosta nos rostos */
-  background:
-    radial-gradient(ellipse 58% 26% at 50% 92%,
-      rgba(252, 250, 244, 0.50) 0%,
-      rgba(252, 250, 244, 0) 78%);
+  /* sem clareamento na base do hero: ele terminava nos 100vh e criava um
+     degrau de contraste com o topo da seção VIP. A foto agora corre
+     contínua entre hero e VIP; o realce do texto vem só do glow atrás
+     dele (.ph-hero-content::before) e o "role para saber mais" tem
+     text-shadow próprio. */
+  background: none;
 }
 .ph-hero-arc {
   position: absolute;
