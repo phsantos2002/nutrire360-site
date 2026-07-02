@@ -1708,13 +1708,19 @@ button {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--olive-dark);
-  text-shadow: 0 0 8px rgba(252, 250, 244, 0.95);
+  /* dourado luminoso + halo escuro: escurece o fundo imediato e faz o
+     dourado saltar tanto sobre o terno escuro quanto sobre o glow claro */
+  color: #EED592;
+  text-shadow:
+    0 0 4px rgba(18, 16, 10, 0.92),
+    0 0 9px rgba(18, 16, 10, 0.78),
+    0 1px 2px rgba(18, 16, 10, 0.95);
 }
 .scroll-indicator svg {
   width: 18px;
   height: 18px;
-  color: var(--primary);
+  color: #EED592;
+  filter: drop-shadow(0 0 4px rgba(18, 16, 10, 0.85));
   animation: bob 1.8s ease-in-out infinite;
 }
 @keyframes bob {
@@ -2395,12 +2401,16 @@ button {
 .vip-cd-label {
   display: block;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 3px;
-  color: var(--gold-deep);
+  /* dourado luminoso + halo escuro p/ ler sobre o terno escuro e a emenda */
+  color: #EED592;
   margin-bottom: 14px;
-  text-shadow: 0 1px 10px rgba(252, 250, 244, 0.9);
+  text-shadow:
+    0 0 4px rgba(18, 16, 10, 0.92),
+    0 0 10px rgba(18, 16, 10, 0.78),
+    0 1px 2px rgba(18, 16, 10, 0.95);
 }
 .vip-countdown .countdown-number {
   color: var(--dark);
