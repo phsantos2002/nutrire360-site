@@ -211,7 +211,7 @@ function initVipModal() {
         openModal();
         try { sessionStorage.setItem(autoShownKey, '1'); } catch (_) {}
       }
-    }, 12000);
+    }, 3000);
   }
 
   if (!form) return;
