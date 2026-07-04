@@ -256,10 +256,23 @@ function initVipModal() {
 
       try { localStorage.setItem(STORAGE_KEY, 'done'); } catch (_) {}
 
+      // monta a mensagem de WhatsApp já dizendo que garantiu a Lista VIP
+      var waNumber = '5512991001398';
+      var waMsg =
+        'Olá! Acabei de garantir minha vaga na Lista VIP da Nutrire 360 pelo site. ' +
+        'Meu nome é ' + nome + '.';
+      var waUrl = 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(waMsg);
+      var waBtn = document.getElementById('vipWaBtn');
+      if (waBtn) waBtn.setAttribute('href', waUrl);
+
       // mostra estado de sucesso
       if (bodyEl) bodyEl.hidden = true;
       if (successEl) successEl.hidden = false;
       if (window.lucide) window.lucide.createIcons();
+
+      // dispara o WhatsApp automaticamente (nova aba); se o navegador bloquear,
+      // o botão "Confirmar no WhatsApp" continua disponível na tela de sucesso.
+      try { window.open(waUrl, '_blank'); } catch (_) {}
     } catch (err) {
       showError(err.message || 'Erro ao enviar. Tente novamente.');
     } finally {
