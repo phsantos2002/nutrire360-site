@@ -138,7 +138,137 @@ document.addEventListener('DOMContentLoaded', () => {
     );
     phReveal.forEach((el) => phObserver.observe(el));
   }
+
+  // --- Pop-up Lista VIP (captura de lead) ---
+  initVipModal();
 });
+
+function initVipModal() {
+  const modal = document.getElementById('vipModal');
+  if (!modal) return;
+
+  const card = modal.querySelector('.vip-modal-card');
+  const form = document.getElementById('vipForm');
+  const bodyEl = modal.querySelector('.vip-modal-body');
+  const successEl = modal.querySelector('.vip-modal-success');
+  const errorEl = document.getElementById('vipFormError');
+  const submitBtn = form ? form.querySelector('.vip-form-submit') : null;
+  const labelEl = submitBtn ? submitBtn.querySelector('.vip-submit-label') : null;
+  const loadingEl = submitBtn ? submitBtn.querySelector('.vip-submit-loading') : null;
+
+  const STORAGE_KEY = 'nutrire_vip_lead';
+  let lastFocused = null;
+
+  const openModal = () => {
+    lastFocused = document.activeElement;
+    modal.hidden = false;
+    modal.setAttribute('aria-hidden', 'false');
+    // força reflow para animar
+    void modal.offsetWidth;
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    const firstInput = form ? form.querySelector('input') : null;
+    if (firstInput) setTimeout(() => firstInput.focus(), 120);
+  };
+
+  const closeModal = () => {
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+      modal.hidden = true;
+      modal.setAttribute('aria-hidden', 'true');
+    }, 320);
+    if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+  };
+
+  // Abrir: qualquer elemento com [data-vip-open]
+  document.querySelectorAll('[data-vip-open]').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal();
+    });
+  });
+
+  // Fechar: overlay, X, botões [data-vip-close]
+  modal.querySelectorAll('[data-vip-close]').forEach((el) => {
+    el.addEventListener('click', closeModal);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.hidden) closeModal();
+  });
+
+  // Auto-abrir uma vez por visitante (se ainda não cadastrou), após 12s
+  const alreadyLead = () => {
+    try { return localStorage.getItem(STORAGE_KEY) === 'done'; } catch (_) { return false; }
+  };
+  const autoShownKey = 'nutrire_vip_autoshown';
+  const wasAutoShown = () => {
+    try { return sessionStorage.getItem(autoShownKey) === '1'; } catch (_) { return false; }
+  };
+  if (!alreadyLead() && !wasAutoShown()) {
+    setTimeout(() => {
+      if (modal.hidden && !alreadyLead()) {
+        openModal();
+        try { sessionStorage.setItem(autoShownKey, '1'); } catch (_) {}
+      }
+    }, 12000);
+  }
+
+  if (!form) return;
+
+  const showError = (msg) => {
+    if (!errorEl) return;
+    errorEl.textContent = msg;
+    errorEl.hidden = false;
+  };
+  const clearError = () => { if (errorEl) errorEl.hidden = true; };
+
+  const isValidEmail = (v) => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);
+  const digits = (v) => (v || '').replace(/\D/g, '');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    clearError();
+
+    const nome = form.nome.value.trim();
+    const telefone = form.telefone.value.trim();
+    const email = form.email.value.trim();
+
+    [form.nome, form.telefone, form.email].forEach((i) => i.classList.remove('is-invalid'));
+
+    if (!nome) { form.nome.classList.add('is-invalid'); showError('Por favor, informe seu nome.'); form.nome.focus(); return; }
+    if (digits(telefone).length < 10) { form.telefone.classList.add('is-invalid'); showError('Informe um telefone válido com DDD.'); form.telefone.focus(); return; }
+    if (!isValidEmail(email)) { form.email.classList.add('is-invalid'); showError('Informe um e-mail válido.'); form.email.focus(); return; }
+
+    // estado de carregando
+    if (submitBtn) submitBtn.disabled = true;
+    if (labelEl) labelEl.hidden = true;
+    if (loadingEl) loadingEl.hidden = false;
+
+    try {
+      const resp = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nome, telefone, email, origem: 'popup-site' }),
+      });
+      const data = await resp.json().catch(() => ({}));
+      if (!resp.ok) throw new Error(data.error || 'Não foi possível enviar. Tente novamente.');
+
+      try { localStorage.setItem(STORAGE_KEY, 'done'); } catch (_) {}
+
+      // mostra estado de sucesso
+      if (bodyEl) bodyEl.hidden = true;
+      if (successEl) successEl.hidden = false;
+      if (window.lucide) window.lucide.createIcons();
+    } catch (err) {
+      showError(err.message || 'Erro ao enviar. Tente novamente.');
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+      if (labelEl) labelEl.hidden = false;
+      if (loadingEl) loadingEl.hidden = true;
+    }
+  });
+}
 
 // === Countdown (pré-lançamento) ===
 function initCountdown() {

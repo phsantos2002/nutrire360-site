@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Admin · Lista VIP Nutrire 360</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --primary: #C9A84C;
+      --gold-deep: #A8852F;
+      --gradient-logo: linear-gradient(115deg, #6E7447 0%, #A8852F 48%, #E0C566 100%);
+      --dark: #2B2E26;
+      --bg: #FCFAF4;
+      --card: #FFFFFF;
+      --body: #696459;
+      --muted: #9C9384;
+      --border: rgba(86, 91, 56, 0.14);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      min-height: 100vh;
+      padding: 28px 18px 60px;
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; }
+
+    /* Login */
+    .login {
+      max-width: 380px;
+      margin: 12vh auto 0;
+      background: var(--card);
+      border-radius: 16px;
+      padding: 34px 30px;
+      box-shadow: 0 18px 50px rgba(20, 22, 15, 0.10);
+      border-top: 4px solid transparent;
+      border-image: var(--gradient-logo) 1;
+    }
+    .login h1 { font-family: 'Poppins', sans-serif; font-size: 21px; font-weight: 600; margin-bottom: 6px; }
+    .login p { font-size: 13px; color: var(--body); margin-bottom: 20px; }
+    label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 6px; }
+    input[type="password"] {
+      width: 100%; padding: 13px 15px; font-size: 15px; font-family: inherit;
+      border: 1.5px solid var(--border); border-radius: 10px; background: #fff; color: var(--dark);
+    }
+    input[type="password"]:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(201,168,76,.16); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      border: none; cursor: pointer; font-family: 'Montserrat', sans-serif; font-weight: 700;
+      letter-spacing: .6px; border-radius: 999px; color: #fff; background: var(--gradient-logo);
+      padding: 12px 22px; font-size: 13px; text-transform: uppercase; text-decoration: none;
+    }
+    .btn:hover { filter: brightness(1.05); }
+    .btn-ghost { background: none; color: var(--gold-deep); border: 1.5px solid var(--border); }
+    .btn-block { width: 100%; margin-top: 18px; }
+    .err { color: #C0492F; font-size: 13px; margin-top: 12px; min-height: 16px; }
+
+    /* Dashboard */
+    .head {
+      display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between;
+      margin-bottom: 22px;
+    }
+    .head h1 { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 600; }
+    .head .sub { font-size: 13px; color: var(--muted); margin-top: 3px; }
+    .head-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .count-pill {
+      display: inline-flex; align-items: center; gap: 8px; background: rgba(201,168,76,.14);
+      color: var(--gold-deep); font-weight: 700; font-size: 13px; padding: 8px 14px; border-radius: 999px;
+    }
+
+    .table-wrap { background: var(--card); border-radius: 14px; box-shadow: 0 10px 34px rgba(20,22,15,.07); overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 720px; }
+    th, td { text-align: left; padding: 13px 16px; font-size: 13.5px; }
+    th { font-family: 'Poppins', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); border-bottom: 1.5px solid var(--border); }
+    td { border-bottom: 1px solid var(--border); color: var(--body); }
+    tr:last-child td { border-bottom: none; }
+    td.nome { font-weight: 600; color: var(--dark); }
+    td a { color: var(--gold-deep); text-decoration: none; }
+    td a:hover { text-decoration: underline; }
+    .empty { text-align: center; padding: 50px 20px; color: var(--muted); }
+    .hidden { display: none !important; }
+    @media (max-width: 560px) {
+      .head { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- LOGIN -->
+    <section id="login" class="login">
+      <h1>Lista VIP · Admin</h1>
+      <p>Área restrita da Nutrire 360. Informe a senha de acesso.</p>
+      <form id="loginForm">
+        <label for="pass">Senha</label>
+        <input id="pass" type="password" autocomplete="current-password" placeholder="••••••••" required />
+        <button class="btn btn-block" type="submit">Entrar</button>
+        <p id="loginErr" class="err"></p>
+      </form>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section id="dash" class="hidden">
+      <div class="head">
+        <div>
+          <h1>Leads · Lista VIP</h1>
+          <div class="sub">Nutrire 360 · Inscrições da inauguração</div>
+        </div>
+        <div class="head-actions">
+          <span class="count-pill" id="countPill">0 leads</span>
+          <button class="btn btn-ghost" id="refreshBtn" type="button">Atualizar</button>
+          <button class="btn" id="csvBtn" type="button">Exportar CSV</button>
+          <button class="btn btn-ghost" id="logoutBtn" type="button">Sair</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Data</th>
+              <th>Nome</th>
+              <th>Telefone</th>
+              <th>E-mail</th>
+              <th>Origem</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+        <div id="empty" class="empty hidden">Nenhum lead ainda. Assim que alguém preencher o pop-up, aparece aqui.</div>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    (function () {
+      var KEY = 'nutrire_admin_key';
+      var login = document.getElementById('login');
+      var dash = document.getElementById('dash');
+      var loginForm = document.getElementById('loginForm');
+      var passInput = document.getElementById('pass');
+      var loginErr = document.getElementById('loginErr');
+      var rowsEl = document.getElementById('rows');
+      var emptyEl = document.getElementById('empty');
+      var countPill = document.getElementById('countPill');
+      var currentLeads = [];
+
+      function fmtDate(iso) {
+        try {
+          var d = new Date(iso);
+          return d.toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+        } catch (_) { return iso || ''; }
+      }
+      function esc(s) {
+        return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+        });
+      }
+      function waLink(tel) {
+        var d = String(tel || '').replace(/\D/g, '');
+        if (d.length >= 10 && d.indexOf('55') !== 0) d = '55' + d;
+        return 'https://wa.me/' + d;
+      }
+
+      function render(leads) {
+        currentLeads = leads || [];
+        countPill.textContent = currentLeads.length + (currentLeads.length === 1 ? ' lead' : ' leads');
+        if (!currentLeads.length) {
+          rowsEl.innerHTML = '';
+          emptyEl.classList.remove('hidden');
+          return;
+        }
+        emptyEl.classList.add('hidden');
+        rowsEl.innerHTML = currentLeads.map(function (l, i) {
+          return '<tr>' +
+            '<td>' + (i + 1) + '</td>' +
+            '<td>' + esc(fmtDate(l.data)) + '</td>' +
+            '<td class="nome">' + esc(l.nome) + '</td>' +
+            '<td><a href="' + waLink(l.telefone) + '" target="_blank" rel="noopener">' + esc(l.telefone) + '</a></td>' +
+            '<td><a href="mailto:' + esc(l.email) + '">' + esc(l.email) + '</a></td>' +
+            '<td>' + esc(l.origem || '') + '</td>' +
+          '</tr>';
+        }).join('');
+      }
+
+      function load(key) {
+        return fetch('/api/leads?key=' + encodeURIComponent(key), { cache: 'no-store' })
+          .then(function (r) {
+            if (r.status === 401) throw new Error('Senha incorreta.');
+            if (!r.ok) throw new Error('Erro ao carregar (' + r.status + ').');
+            return r.json();
+          });
+      }
+
+      function showDash() {
+        login.classList.add('hidden');
+        dash.classList.remove('hidden');
+      }
+      function showLogin() {
+        dash.classList.add('hidden');
+        login.classList.remove('hidden');
+      }
+
+      function attempt(key, fromStorage) {
+        return load(key).then(function (data) {
+          try { sessionStorage.setItem(KEY, key); } catch (_) {}
+          showDash();
+          render(data.leads);
+        }).catch(function (err) {
+          if (fromStorage) { try { sessionStorage.removeItem(KEY); } catch (_) {} showLogin(); return; }
+          loginErr.textContent = err.message || 'Falha no acesso.';
+        });
+      }
+
+      loginForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        loginErr.textContent = '';
+        var key = passInput.value.trim();
+        if (!key) return;
+        attempt(key, false);
+      });
+
+      document.getElementById('refreshBtn').addEventListener('click', function () {
+        var key;
+        try { key = sessionStorage.getItem(KEY); } catch (_) {}
+        if (key) load(key).then(function (d) { render(d.leads); }).catch(function () {});
+      });
+
+      document.getElementById('logoutBtn').addEventListener('click', function () {
+        try { sessionStorage.removeItem(KEY); } catch (_) {}
+        passInput.value = '';
+        showLogin();
+      });
+
+      document.getElementById('csvBtn').addEventListener('click', function () {
+        if (!currentLeads.length) return;
+        var header = ['Data', 'Nome', 'Telefone', 'Email', 'Origem'];
+        var lines = [header.join(',')];
+        currentLeads.forEach(function (l) {
+          var row = [fmtDate(l.data), l.nome, l.telefone, l.email, l.origem || ''].map(function (v) {
+            v = String(v == null ? '' : v).replace(/"/g, '""');
+            return '"' + v + '"';
+          });
+          lines.push(row.join(','));
+        });
+        var blob = new Blob(['﻿' + lines.join('\r\n')], { type: 'text/csv;charset=utf-8;' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'leads-nutrire360.csv';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+
+      // Auto-login se já tem chave salva na sessão
+      var saved = null;
+      try { saved = sessionStorage.getItem(KEY); } catch (_) {}
+      if (saved) attempt(saved, true);
+    })();
+  </script>
+</body>
+</html>
