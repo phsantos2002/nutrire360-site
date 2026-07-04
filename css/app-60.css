@@ -1173,12 +1173,12 @@ button {
 
 @media (max-width: 768px) {
   :root {
-    --navbar-height: 104px;
+    --navbar-height: 112px;
   }
 
   .navbar-logo { margin-left: 6px; }
   .navbar-actions { margin-right: 6px; }
-  .navbar-logo img { height: 92px; }
+  .navbar-logo img { height: 86px; }
   .navbar.scrolled { height: 66px; }
   .navbar.scrolled .navbar-logo img { height: 56px; }
 
@@ -2384,10 +2384,11 @@ button {
   .vip-grid { grid-template-columns: 1fr; gap: 22px; }
 }
 
-/* Mobile: logo maior, ocupando o espaço livre acima/ao lado dos rostos */
+/* Mobile: logo maior, ancorado a partir do topo para não cortar */
 @media (max-width: 768px) {
-  .navbar-logo { align-self: center; margin-top: 0; }
-  .navbar-logo img { height: 92px; }
+  .navbar-logo { align-self: flex-start; margin-top: 18px; }
+  .navbar-logo img { height: 86px; }
+  .navbar.scrolled .navbar-logo { align-self: center; margin-top: 0; }
   .navbar.scrolled .navbar-logo img { height: 56px; }
 }
 
