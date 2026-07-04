@@ -2,8 +2,19 @@
 // Sem dependências npm: usa fetch nativo (Node 18+ na Vercel).
 
 function kvConfig() {
-  const url = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
-  const token = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
+  const env = process.env;
+  // Nomes conhecidos primeiro
+  let url = env.KV_REST_API_URL || env.UPSTASH_REDIS_REST_URL;
+  let token = env.KV_REST_API_TOKEN || env.UPSTASH_REDIS_REST_TOKEN;
+  // Fallback: detecta qualquer variante com prefixo (ex.: STORAGE_KV_REST_API_URL)
+  if (!url) {
+    const k = Object.keys(env).find((n) => /REST_API_URL$/.test(n));
+    if (k) url = env[k];
+  }
+  if (!token) {
+    const k = Object.keys(env).find((n) => /REST_API_TOKEN$/.test(n) && !/READ_ONLY/.test(n));
+    if (k) token = env[k];
+  }
   return { url, token };
 }
 
