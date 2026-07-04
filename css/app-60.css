@@ -2739,8 +2739,24 @@ button {
 }
 .vip-success-close:hover { color: var(--text); }
 
-@media (max-width: 480px) {
+@media (max-width: 560px) {
+  .vip-modal { padding: 14px; align-items: center; }
+  .vip-modal-card { max-width: 400px; max-height: calc(100dvh - 28px); border-radius: 16px; }
+
   .vip-modal-body,
-  .vip-modal-success { padding: 42px 22px 26px; }
-  .vip-modal-title { font-size: 22px; }
+  .vip-modal-success { padding: 26px 20px 20px; }
+
+  .vip-modal-close { top: 8px; right: 8px; width: 34px; height: 34px; }
+  .vip-modal-eyebrow { font-size: 10px; letter-spacing: 1.4px; margin-bottom: 10px; }
+  .vip-modal-title { font-size: 20px; line-height: 1.15; margin-bottom: 8px; }
+  .vip-modal-sub { font-size: 13px; line-height: 1.45; margin-bottom: 16px; }
+
+  .vip-form { gap: 10px; }
+  .vip-field { gap: 4px; }
+  .vip-field label { font-size: 11.5px; }
+  .vip-field input { padding: 11px 13px; font-size: 14px; border-radius: 9px; }
+  .vip-form-submit { margin-top: 4px; padding: 13px 20px; }
+  .vip-modal-note { margin-top: 9px; font-size: 11px; }
+
+  .vip-success-check { width: 60px; height: 60px; margin: 2px auto 12px; }
 }
