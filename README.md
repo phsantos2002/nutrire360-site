@@ -6,26 +6,44 @@ Estrutura estática (HTML + CSS + JS), identidade visual própria (verde-oliva +
 
 ---
 
-## 🗂 Duas versões do site
+## 🗂 Versões do site
 
-O projeto mantém **duas páginas**, que compartilham o mesmo `css/styles.css` e `js/main.js`:
+O projeto mantém **três páginas**, que compartilham o mesmo `css/app-60.css` e `js/main.js`:
 
 | Arquivo | Para quê | Status |
 |---------|----------|--------|
 | **`index.html`** | **Pré-lançamento** — campanha de captação da Lista VIP de inauguração via WhatsApp. Foco em uma única ação. | ✅ Ativo agora |
-| **`site-pos-lancamento.html`** | **Institucional completo** — versão definitiva, com serviços, sobre, planos, localização e blog. | 💤 Para ativar na inauguração |
+| **`institucional.html`** | **Institucional com serviços** — clínica em operação: serviços, procedimentos, Programas Nutrire 360, profissionais (com os atendimentos de cada um) e localização. Usa `css/inst-1.css` + `js/inst.js` por cima do design system. | 🟡 No ar em **/teste**, para aprovação |
+| **`site-pos-lancamento.html`** | Rascunho antigo da versão institucional (placeholders do Unsplash, WhatsApp fictício e link para um `css/styles.css` que não existe mais). | ⚠️ Obsoleto |
 
-### Como alternar na inauguração
+### Link de aprovação (/teste)
 
-No dia da abertura, basta trocar os nomes dos arquivos (a versão institucional passa a ser a página principal):
+A institucional está publicada em **nutrire360.com.br/teste** (rewrite no `vercel.json`
+apontando para `institucional.html`). O endereço tem `noindex` e `Cache-Control: no-store`,
+então não aparece no Google e cada acesso já traz a última versão. A home (`index.html`)
+segue intacta.
+
+### Como colocar a institucional no ar
+
+Quando a clínica estiver em operação, promova a institucional a página principal:
 
 ```bash
-# faça backup da versão de pré-lançamento e promova a institucional
+# guarda a versão de pré-lançamento e promove a institucional
 mv index.html pre-lancamento.html
-mv site-pos-lancamento.html index.html
+mv institucional.html index.html
 ```
 
-Depois é só publicar (push no Git → a Vercel/Netlify rebuilda sozinha). Nenhuma alteração de CSS/JS é necessária: ambos os arquivos usam o mesmo design system.
+Antes de publicar, remova a linha `<meta name="robots" content="noindex, nofollow" />`
+do `<head>` (ela existe só para a prévia não ser indexada).
+
+Para revisar localmente antes disso:
+
+```bash
+python3 -m http.server 8000
+# abra http://localhost:8000/institucional.html
+```
+
+Depois é só publicar (push no Git → a Vercel/Netlify rebuilda sozinha). Nenhuma alteração de CSS/JS é necessária: as páginas usam o mesmo design system.
 
 ---
 
@@ -59,11 +77,18 @@ python -m http.server 8000
 ```
 nutrire360-site/
 ├── index.html                 ← Pré-lançamento (ativo) — Lista VIP
-├── site-pos-lancamento.html   ← Institucional completo (para a inauguração)
+├── institucional.html         ← Institucional com serviços (pronto, não publicado)
+├── admin.html                 ← Painel de leads da Lista VIP (senha)
+├── site-pos-lancamento.html   ← Rascunho antigo (obsoleto)
+├── api/
+│   ├── lead.js                ← POST: salva lead no Vercel KV
+│   └── leads.js               ← GET: lista leads (ADMIN_PASSWORD)
 ├── css/
-│   └── styles.css             ← Design system + bloco "PRÉ-LANÇAMENTO — ADIÇÕES"
+│   ├── app-60.css             ← Design system + bloco "PRÉ-LANÇAMENTO — ADIÇÕES"
+│   └── inst-1.css             ← Seções da institucional (serviços, programas, profissionais)
 ├── js/
-│   └── main.js                ← Navbar, drawer, smooth scroll, reveal, countdown
+│   ├── main.js                ← Navbar, mega-menu, smooth scroll, reveal, pop-up, countdown
+│   └── inst.js                ← Reveal das seções da institucional
 ├── assets/
 │   └── logo.png               ← Logo oficial
 ├── vercel.json
