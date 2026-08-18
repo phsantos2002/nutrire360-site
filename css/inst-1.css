@@ -590,3 +590,95 @@
   .btn-nav-outline { display: none; }
   .block-head { margin-bottom: 24px; }
 }
+
+/* ============================================
+   LEITURA — texto mais escuro e um pouco maior
+   Escopado em .inst (o <body> da institucional):
+   não afeta index.html nem nenhuma outra página.
+   ============================================ */
+
+/* Tokens de texto mais escuros. Como são variáveis, todo componente que
+   usa var(--text-body) / var(--text-muted) escurece junto, inclusive os
+   herdados do app-60.css (manifesto, rodapé, etc.). */
+.inst {
+  --text-body:  #4A4639;   /* era #696459 — contraste ~8.8:1 sobre o creme */
+  --text-muted: #6B6558;   /* era #9C9384 — contraste ~5.6:1 */
+  --text-light: #8C8578;
+}
+
+/* Corpo de texto: peso 300 clareava demais as letras finas. 400 lê melhor. */
+.inst .svc-lead,
+.inst .svc-desc,
+.inst .inc-list li,
+.inst .proc-text,
+.inst .pro-bio,
+.inst .loc-lines li,
+.inst .manifesto-item-text,
+.inst .ph-footer-tagline,
+.inst .prog-note,
+.inst .programs-note,
+.inst .compliance p {
+  font-weight: 400;
+}
+
+/* Rótulos dourados pequenos: dourado claro sobre creme quase não lia */
+.inst .eyebrow,
+.inst .ph-eyebrow { color: #8A6B1E; }
+.inst .prog-name,
+.inst .pro-role,
+.inst .vip-eyebrow { color: #8A6B1E; }
+
+/* Destaque dourado dos títulos: mesma identidade, sem a ponta clara */
+.inst .gold-em {
+  background-image: linear-gradient(115deg, #676D3F 0%, #9A7A26 50%, #C09B3A 100%);
+}
+
+/* ---- Tamanhos: um degrau acima em todo o corpo de texto ---- */
+.inst .section-title { font-size: clamp(21px, 2.9vw, 28.5px); }
+.inst .svc-lead      { font-size: 16.5px; line-height: 1.72; }
+
+.inst .svc-title     { font-size: 22px; }
+.inst .svc-desc      { font-size: 14.5px; }
+.inst .svc-inc-label { font-size: 11px; color: #4F5433; }
+.inst .inc-list li   { font-size: 14.5px; line-height: 1.55; }
+
+.inst .proc-name     { font-size: 15.5px; }
+.inst .proc-text     { font-size: 13.5px; line-height: 1.6; }
+
+.inst .prog-name     { font-size: 11px; }
+.inst .prog-mode     { font-size: 12.5px; color: #4F5433; }
+.inst .prog-note     { font-size: 12.5px; }
+.inst .programs-note { font-size: 13.5px; }
+
+.inst .pro-role      { font-size: 11px; }
+.inst .pro-cred      { font-size: 13px; }
+.inst .pro-bio       { font-size: 15px; line-height: 1.72; }
+.inst .pro-serv-label { font-size: 11px; color: #4F5433; }
+.inst .pro-serv li   { font-size: 14.5px; }
+
+.inst .loc-lines li  { font-size: 15px; }
+
+.inst .manifesto-item-text { font-size: 16px; }
+.inst .manifesto-item-title,
+.inst .svc-title,
+.inst .proc-name,
+.inst .loc-lines li strong { color: #23261F; }
+
+.inst .compliance p  { font-size: 12.5px; line-height: 1.8; }
+.inst .ph-footer-tagline { font-size: 15px; }
+.inst .ph-footer-copy    { font-size: 13px; }
+
+/* Capa e chamada final */
+.inst .ph-subtitle       { font-size: clamp(14.5px, 1.8vw, 17.5px); color: #262420; }
+.inst .final-cta-subtitle { font-size: 17px; font-weight: 400; color: rgba(255, 253, 247, 0.92); }
+.inst .hero-place        { font-size: 12.5px; color: #262420; }
+
+@media (max-width: 768px) {
+  .inst .svc-lead    { font-size: 15.5px; }
+  .inst .svc-title   { font-size: 20.5px; }
+  .inst .inc-list li,
+  .inst .pro-serv li { font-size: 14px; }
+  .inst .pro-bio,
+  .inst .loc-lines li { font-size: 14.5px; }
+  .inst .manifesto-item-text { font-size: 15.5px; }
+}
