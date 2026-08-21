@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nutrire 360 · Saúde Integrada está chegando a Jacareí, SP. Nutrição, estética e medicina sob o mesmo teto. Entre na Lista VIP de inauguração." />
+  <meta name="theme-color" content="#C9A84C" />
+  <title>Nutrire 360 · Em breve em Jacareí</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nutrire 360 · Saúde Integrada em Jacareí" />
+  <meta property="og:description" content="Uma nova forma de cuidar da saúde está chegando a Jacareí. Entre na Lista VIP de inauguração." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/logo.png?v=3" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Icons (lucide) -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <link rel="stylesheet" href="../css/app-60.css" />
+  <link rel="icon" type="image/png" href="../assets/favicon.png?v=1" />
+  <link rel="apple-touch-icon" href="../assets/favicon.png?v=1" />
+</head>
+<body>
+
+  <!-- ============================================
+       NAVBAR MINIMALISTA (uma única ação)
+       ============================================ -->
+  <header id="navbar" class="navbar">
+    <div class="navbar-inner">
+      <a href="#" class="navbar-logo" aria-label="Nutrire 360">
+        <img src="../assets/logo.png?v=3" alt="Nutrire 360 · Saúde Integrada" />
+      </a>
+
+      <nav class="navbar-actions">
+        <a
+          href="#"
+          data-vip-open
+          class="btn btn-primary btn-nav-vip"
+        >
+          <i data-lucide="message-circle" class="btn-icon"></i>
+          <span class="nav-vip-full">PARTICIPE DA INAUGURAÇÃO</span>
+          <span class="nav-vip-short">INAUGURAÇÃO</span>
+        </a>
+
+        <a href="#" data-vip-open class="btn btn-nav-outline">
+          <span class="nav-vip-full">ENTRAR NA LISTA VIP</span>
+          <span class="nav-vip-short">LISTA VIP</span>
+        </a>
+
+        <button
+          id="menuBtn"
+          class="navbar-menu-btn"
+          type="button"
+          aria-label="Abrir menu"
+          aria-controls="menuDrawer"
+          aria-expanded="false"
+        >
+          <span class="menu-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- ============================================
+         MEGA-MENU — abas da estrutura do site/clínica
+         ============================================ -->
+    <div id="menuDrawer" class="mega-menu" role="region" aria-label="Menu de navegação">
+      <div class="mega-menu-inner">
+        <div class="mega-col">
+          <a class="mega-col-title" href="#manifesto">A Clínica</a>
+          <a href="#manifesto">Sobre a Nutrire 360</a>
+          <a href="#equipe">A Equipe</a>
+          <a href="#lista-vip">Onde Estaremos</a>
+        </div>
+
+        <div class="mega-col">
+          <a class="mega-col-title" href="#pilares">Os Pilares</a>
+          <a href="#pilares">Nutrição Clínica</a>
+          <a href="#pilares">Estética Avançada</a>
+          <a href="#pilares">Medicina Integrada</a>
+        </div>
+
+        <div class="mega-col mega-col-cta">
+          <a class="mega-col-title" href="#lista-vip">Inauguração</a>
+          <a href="#lista-vip">Inauguração · 16 de julho</a>
+          <a href="#" data-vip-open>Lista VIP</a>
+          <a class="mega-cta" href="#" data-vip-open>Garanta sua vaga VIP</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="menuOverlay" class="menu-overlay" hidden></div>
+
+  <!-- ============================================
+       FUNDO ÚNICO (foto da equipe) — cobre capa + Lista VIP
+       ============================================ -->
+  <div class="cover-wrap">
+
+  <!-- ============================================
+       SEÇÃO 1 — HERO PRÉ-LANÇAMENTO
+       ============================================ -->
+  <section class="ph-hero">
+    <div class="ph-hero-bg">
+      <div class="ph-hero-overlay"></div>
+    </div>
+
+    <div class="ph-hero-arc" aria-hidden="true"></div>
+
+    <div class="ph-hero-content">
+      <span class="ph-eyebrow">
+        <span class="dot-blink" aria-hidden="true"></span>
+        Em breve, em Jacareí, SP
+      </span>
+
+      <h1 class="ph-title">
+        Uma nova forma de<br />
+        <span class="gold-em">cuidar da saúde</span><br />
+        está chegando.
+      </h1>
+
+      <p class="ph-subtitle">
+        Nutrição, estética e medicina trabalhando juntas, sob o mesmo teto.
+      </p>
+    </div>
+
+    <a href="#lista-vip" class="scroll-indicator" aria-label="Role para saber mais">
+      <span>Role para saber mais</span>
+      <i data-lucide="chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- ============================================
+       SEÇÃO 2 — LISTA VIP (coração da página)
+       ============================================ -->
+  <section class="vip" id="lista-vip">
+    <div class="container">
+
+      <!-- Contador de inauguração -->
+      <div class="vip-countdown">
+        <span class="vip-cd-label">Faltam para a inauguração · 16 de julho</span>
+        <div id="countdown" class="countdown" data-launch="2026-07-16T09:00:00-03:00" aria-label="Contagem regressiva para a inauguração">
+          <div class="countdown-item">
+            <span class="countdown-number" id="cd-days">00</span>
+            <span class="countdown-label">Dias</span>
+          </div>
+          <span class="countdown-separator" aria-hidden="true"></span>
+          <div class="countdown-item">
+            <span class="countdown-number" id="cd-hours">00</span>
+            <span class="countdown-label">Horas</span>
+          </div>
+          <span class="countdown-separator" aria-hidden="true"></span>
+          <div class="countdown-item">
+            <span class="countdown-number" id="cd-mins">00</span>
+            <span class="countdown-label">Min</span>
+          </div>
+          <span class="countdown-separator" aria-hidden="true"></span>
+          <div class="countdown-item">
+            <span class="countdown-number" id="cd-secs">00</span>
+            <span class="countdown-label">Seg</span>
+          </div>
+        </div>
+
+        <!-- CTA abaixo do cronômetro (somente mobile) -->
+        <a
+          class="cd-cta"
+          href="#"
+          data-vip-open
+        >
+          <i data-lucide="message-circle" class="btn-icon"></i>
+          Participe da Inauguração
+        </a>
+      </div>
+
+      <div class="vip-grid">
+
+        <!-- ESQUERDA: Onde estaremos (Pátio Villa Branca) -->
+        <article class="vip-card vip-card-sm">
+          <span class="vip-eyebrow"><i data-lucide="map-pin"></i> Onde Estaremos</span>
+          <h2 class="vip-title-2">
+            Nosso espaço, no
+            <span class="gold-em">coração de Jacareí.</span>
+          </h2>
+          <div class="local-photo">
+            <img src="../assets/local.jpg?v=1" alt="Pátio Villa Branca — Jacareí" loading="lazy" />
+          </div>
+          <p class="local-name">Pátio Villa Branca · Loja 19</p>
+          <p class="local-addr">
+            <i data-lucide="map-pin"></i>
+            <span>Av. das Letras, 659 · Loja 19 · Vila Branca<br />Jacareí, SP · 12301-330</span>
+          </p>
+          <a
+            href="https://maps.google.com/?q=P%C3%A1tio+Villa+Branca+Loja+19+Av.+das+Letras+659+Jacare%C3%AD"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-outline-dark btn-pill"
+          >
+            <i data-lucide="map-pin" class="btn-icon"></i>
+            COMO CHEGAR
+          </a>
+        </article>
+
+        <!-- DIREITA: Lista VIP -->
+        <article class="vip-card vip-card-sm">
+          <span class="vip-eyebrow vip-eyebrow-center">Participe da Inauguração</span>
+          <h2 class="vip-title-2">
+            Seja um dos primeiros
+            <span class="gold-em">a viver a experiência Nutrire 360.</span>
+          </h2>
+          <ul class="vip-benefits">
+            <li class="vip-benefit">
+              <i data-lucide="check"></i>
+              <div><strong>Acesso antecipado</strong><span>Agendamento prioritário antes da abertura.</span></div>
+            </li>
+            <li class="vip-benefit">
+              <i data-lucide="check"></i>
+              <div><strong>Condições exclusivas</strong><span>Vantagens de inauguração só para a lista.</span></div>
+            </li>
+            <li class="vip-benefit">
+              <i data-lucide="check"></i>
+              <div><strong>Bastidores da clínica</strong><span>Updates sobre o espaço e a equipe.</span></div>
+            </li>
+            <li class="vip-benefit">
+              <i data-lucide="check"></i>
+              <div><strong>Convite para a abertura</strong><span>Vivência exclusiva com os três profissionais.</span></div>
+            </li>
+          </ul>
+          <a
+            href="#"
+            data-vip-open
+            class="btn btn-primary btn-xl btn-logo-grad"
+          >
+            QUERO ENTRAR NA LISTA VIP
+          </a>
+          <p class="vip-note">Sem custo · Sem compromisso.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  </div><!-- /.cover-wrap -->
+
+  <!-- ============================================
+       SEÇÃO 3 — EQUIPE TEASER
+       ============================================ -->
+  <section class="team" id="equipe">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">A Equipe</span>
+        <h2 class="section-title">
+          Três profissionais.
+          <span class="gold-em">Uma só visão.</span>
+        </h2>
+        <p class="team-subtitle">
+          Conheça quem vai cuidar de você.
+        </p>
+      </div>
+
+      <div class="team-grid">
+        <article class="team-card">
+          <div class="team-photo"><img src="../assets/nutricionista.jpg?v=1" alt="Catarina Harmbacher, nutricionista clínica da Nutrire 360" loading="lazy" /></div>
+          <p class="team-name">Catarina Harmbacher</p>
+          <h3 class="team-role">Nutricionista Clínica</h3>
+          <p class="team-credential">CRN 25334</p>
+          <p class="team-text">
+            Mais de 17 anos em saúde metabólica e nutrição comportamental.
+            Acompanha o paciente do pré ao pós-bariátrico, com foco em
+            reeducação alimentar e hábitos sustentáveis, no ritmo de cada um.
+          </p>
+        </article>
+
+        <article class="team-card">
+          <div class="team-photo"><img src="../assets/esteticista.jpg?v=1" alt="Geni Faria, biomédica esteta da Nutrire 360" loading="lazy" /></div>
+          <p class="team-name">Geni Faria</p>
+          <h3 class="team-role">Biomédica Esteta</h3>
+          <p class="team-credential">CRBM 56493-SP</p>
+          <p class="team-text">
+            Biomédica com especialização em estética: parte do conhecimento
+            celular para desenhar cada protocolo facial e corporal, com
+            tecnologia de ponta e integrado ao cuidado nutricional e médico.
+          </p>
+        </article>
+
+        <article class="team-card">
+          <div class="team-photo"><img src="../assets/medico.jpg?v=1" alt="Dr. Mario Camacho, médico da Nutrire 360" loading="lazy" /></div>
+          <p class="team-name">Dr. Mario Camacho</p>
+          <h3 class="team-role">Médico</h3>
+          <p class="team-credential">CRM-SP 76.636 · RQE 50.198</p>
+          <p class="team-text">
+            Cirurgião do aparelho digestivo e bariátrico, com pós-graduação em
+            Nutrologia pelo Hospital Israelita Albert Einstein. Suporte clínico
+            contínuo, leitura de exames e olhar integrativo em cada fase.
+          </p>
+        </article>
+      </div>
+
+      <div class="team-cta">
+        <a
+          href="https://wa.me/5512991001398?text=Ol%C3%A1!%20Quero%20conhecer%20a%20equipe%20e%20a%20Nutrire%20360."
+          target="_blank"
+          rel="noopener"
+          class="btn btn-outline-dark btn-lg btn-pill"
+        >
+          FALAR COM A EQUIPE
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SEÇÃO 4 — MANIFESTO
+       ============================================ -->
+  <section class="manifesto" id="manifesto">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Nosso Manifesto</span>
+        <h2 class="section-title">
+          Saúde de verdade não acontece em
+          <span class="gold-em">consultas isoladas.</span>
+        </h2>
+      </div>
+
+      <div class="manifesto-grid">
+        <article class="manifesto-item">
+          <span class="manifesto-num">01</span>
+          <h3 class="manifesto-item-title">Visão integral do corpo</h3>
+          <p class="manifesto-item-text">
+            Acreditamos que o corpo é um todo. Cuidar dele por partes, uma
+            especialidade aqui, outra ali, é o que faz tanta gente se sentir
+            tratada, mas nunca cuidada por inteiro.
+          </p>
+        </article>
+
+        <article class="manifesto-item">
+          <span class="manifesto-num">02</span>
+          <h3 class="manifesto-item-title">Três profissionais conversando</h3>
+          <p class="manifesto-item-text">
+            Por isso reunimos nutrição, estética e medicina no mesmo espaço,
+            com três profissionais que conversam entre si sobre o mesmo
+            paciente. Você.
+          </p>
+        </article>
+
+        <article class="manifesto-item">
+          <span class="manifesto-num">03</span>
+          <h3 class="manifesto-item-title">Resultado e visão completa</h3>
+          <p class="manifesto-item-text">
+            Mais resultado. Menos retrabalho. Uma jornada de saúde com visão
+            completa, do plano alimentar ao procedimento estético, do exame
+            clínico ao acompanhamento contínuo.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SEÇÃO 5 — OS 3 PILARES (teaser)
+       ============================================ -->
+  <section class="pillars" id="pilares">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">O que vem aí</span>
+        <h2 class="section-title">
+          Três pilares.
+          <span class="gold-em">Uma só visão de saúde.</span>
+        </h2>
+      </div>
+
+      <div class="pillars-grid">
+        <article class="pillar-card">
+          <span class="pillar-num">01</span>
+          <div class="pillar-icon"><i data-lucide="leaf"></i></div>
+          <h3 class="pillar-title">Nutrição Clínica</h3>
+          <p class="pillar-text">
+            Comportamento alimentar e planos nutricionais que respeitam o seu
+            ritmo, construindo hábitos que permanecem.
+          </p>
+          <span class="pillar-badge">
+            <span class="dot-blink" aria-hidden="true"></span> Em breve
+          </span>
+        </article>
+
+        <article class="pillar-card featured">
+          <span class="pillar-num">02</span>
+          <div class="pillar-icon"><i data-lucide="gem"></i></div>
+          <h3 class="pillar-title">Estética Avançada</h3>
+          <p class="pillar-text">
+            Procedimentos faciais e corporais com tecnologia de ponta, sempre
+            com respaldo clínico e cuidado delicado.
+          </p>
+          <span class="pillar-badge">
+            <span class="dot-blink" aria-hidden="true"></span> Em breve
+          </span>
+        </article>
+
+        <article class="pillar-card">
+          <span class="pillar-num">03</span>
+          <div class="pillar-icon"><i data-lucide="stethoscope"></i></div>
+          <h3 class="pillar-title">Medicina Integrada</h3>
+          <p class="pillar-text">
+            Avaliação clínica completa, leitura de exames e acompanhamento
+            contínuo: a base científica de toda a jornada.
+          </p>
+          <span class="pillar-badge">
+            <span class="dot-blink" aria-hidden="true"></span> Em breve
+          </span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SEÇÃO 7 — CALL FINAL (full-bleed dark)
+       ============================================ -->
+  <section class="final-cta">
+    <div class="container">
+      <div class="final-cta-inner">
+        <span class="final-cta-eyebrow">Última Chamada</span>
+        <h2 class="final-cta-title">
+          Não fique de fora
+          <span class="gold-em">do começo de tudo.</span>
+        </h2>
+        <p class="final-cta-subtitle">
+          A Lista VIP é o primeiro passo para viver a saúde integrada antes de
+          todo mundo.
+        </p>
+        <a
+          href="#"
+          data-vip-open
+          class="btn btn-primary btn-xl btn-logo-grad"
+        >
+          ENTRAR NA LISTA VIP
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER MINIMALISTA
+       ============================================ -->
+  <footer class="ph-footer">
+    <div class="container">
+      <img src="../assets/logo.png?v=3" alt="Nutrire 360" class="ph-footer-logo" />
+      <p class="ph-footer-tagline">
+        Nutrição, estética e medicina em um só cuidado.
+      </p>
+      <div class="ph-footer-social">
+        <a
+          href="https://instagram.com/nutrire360"
+          target="_blank"
+          rel="noopener"
+          aria-label="Instagram"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+        </a>
+        <a
+          href="https://wa.me/5512991001398?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Nutrire%20360%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+          target="_blank"
+          rel="noopener"
+          aria-label="WhatsApp"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.437-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.463 3.488"/></svg>
+        </a>
+      </div>
+      <p class="ph-footer-copy">© 2026 Nutrire 360 · Saúde Integrada · Jacareí, SP</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp button -->
+  <a
+    href="#"
+    data-vip-open
+    class="whatsapp-float"
+    aria-label="Entrar na Lista VIP"
+  >
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.437-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.463 3.488"/></svg>
+  </a>
+
+  <!-- ============================================
+       POP-UP — Lista VIP (captura de lead)
+       ============================================ -->
+  <div id="vipModal" class="vip-modal" hidden aria-hidden="true">
+    <div class="vip-modal-overlay" data-vip-close></div>
+    <div class="vip-modal-card" role="dialog" aria-modal="true" aria-labelledby="vipModalTitle">
+      <button type="button" class="vip-modal-close" data-vip-close aria-label="Fechar">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
+
+      <div class="vip-modal-body">
+        <span class="vip-modal-eyebrow">
+          <span class="dot-blink" aria-hidden="true"></span>
+          Lista VIP · Inauguração 16 de julho
+        </span>
+        <h2 id="vipModalTitle" class="vip-modal-title">
+          Garanta sua vaga com
+          <span class="gold-em">prioridade de desconto</span>
+          nos planos.
+        </h2>
+        <p class="vip-modal-sub">
+          Participe da inauguração e seja um dos primeiros a garantir condições
+          exclusivas nos planos da Nutrire 360. Deixe seus dados, o contato é
+          sem compromisso.
+        </p>
+
+        <form id="vipForm" class="vip-form" novalidate>
+          <div class="vip-field">
+            <label for="vipNome">Nome completo</label>
+            <input id="vipNome" name="nome" type="text" autocomplete="name" placeholder="Seu nome" required />
+          </div>
+          <div class="vip-field">
+            <label for="vipTelefone">WhatsApp / Telefone</label>
+            <input id="vipTelefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(12) 90000-0000" required />
+          </div>
+          <div class="vip-field">
+            <label for="vipEmail">E-mail</label>
+            <input id="vipEmail" name="email" type="email" autocomplete="email" placeholder="voce@email.com" required />
+          </div>
+
+          <p id="vipFormError" class="vip-form-error" hidden></p>
+
+          <button type="submit" class="btn btn-primary btn-xl btn-logo-grad vip-form-submit">
+            <span class="vip-submit-label">
+              GARANTIR MINHA VAGA VIP
+            </span>
+            <span class="vip-submit-loading" hidden>Enviando…</span>
+          </button>
+          <p class="vip-note vip-modal-note">Sem custo · Sem compromisso · Seus dados ficam só com a Nutrire 360.</p>
+        </form>
+      </div>
+
+      <div class="vip-modal-success" hidden>
+        <div class="vip-success-check">
+          <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        </div>
+        <h2 class="vip-modal-title">Vaga garantida! 🎉</h2>
+        <p class="vip-modal-sub">
+          Você está na Lista VIP da Nutrire 360. Estamos te levando ao WhatsApp
+          para confirmar. Se não abrir sozinho, toque no botão abaixo.
+        </p>
+        <a
+          id="vipWaBtn"
+          class="btn btn-primary btn-lg btn-logo-grad vip-success-wa"
+          href="https://wa.me/5512991001398"
+          target="_blank"
+          rel="noopener"
+        >
+          <i data-lucide="message-circle" class="btn-icon"></i>
+          CONFIRMAR NO WHATSAPP
+        </a>
+        <button type="button" class="vip-success-close" data-vip-close>Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/main.js?v=6"></script>
+</body>
+</html>

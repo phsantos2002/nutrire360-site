@@ -8,42 +8,39 @@ Estrutura estática (HTML + CSS + JS), identidade visual própria (verde-oliva +
 
 ## 🗂 Versões do site
 
-O projeto mantém **três páginas**, que compartilham o mesmo `css/app-60.css` e `js/main.js`:
-
 | Arquivo | Para quê | Status |
 |---------|----------|--------|
-| **`index.html`** | **Pré-lançamento** — campanha de captação da Lista VIP de inauguração via WhatsApp. Foco em uma única ação. | ✅ Ativo agora |
-| **`institucional.html`** | **Institucional com serviços** — clínica em operação: serviços, procedimentos, Programas Nutrire 360, profissionais (com os atendimentos de cada um) e localização. Usa `css/inst-1.css` + `js/inst.js` por cima do design system. | 🟡 No ar em **/teste**, para aprovação |
-| **`site-pos-lancamento.html`** | Rascunho antigo da versão institucional (placeholders do Unsplash, WhatsApp fictício e link para um `css/styles.css` que não existe mais). | ⚠️ Obsoleto |
+| **`index.html`** | **Institucional com serviços** — clínica em operação: serviços e "inclui" de cada consulta, bioimpedância, estética avançada, Programas Nutrire 360, profissionais (com os atendimentos de cada um) e localização. Usa `css/app-60.css` + `css/inst-1.css` e `js/main.js` + `js/inst.js`. | ✅ **No ar** |
+| `arquivo/pre-lancamento.html` | Campanha de Lista VIP da inauguração (pop-up de captura, countdown). Foi a home até 21/08/2026. | 📦 Arquivada |
+| `arquivo/site-pos-lancamento.html` | Rascunho antigo da institucional (placeholders do Unsplash, WhatsApp fictício, aponta para um `css/styles.css` que não existe mais). | ⚠️ Obsoleto |
 
-### Link de aprovação (/teste)
+As páginas em `arquivo/` continuam funcionando (os caminhos de `css/`, `js/` e `assets/`
+foram ajustados para `../`) e estão com `noindex`, tanto na meta tag quanto no header do
+`vercel.json`. Elas não aparecem no Google e não competem com a home.
 
-A institucional está publicada em **nutrire360.com.br/teste** (rewrite no `vercel.json`
-apontando para `institucional.html`). O endereço tem `noindex` e `Cache-Control: no-store`,
-então não aparece no Google e cada acesso já traz a última versão. A home (`index.html`)
-segue intacta.
-
-### Como colocar a institucional no ar
-
-Quando a clínica estiver em operação, promova a institucional a página principal:
+### Voltar ao layout anterior, se precisar
 
 ```bash
-# guarda a versão de pré-lançamento e promove a institucional
-mv index.html pre-lancamento.html
-mv institucional.html index.html
+# guarda a institucional e devolve a página de pré-lançamento para a raiz
+git mv index.html arquivo/institucional.html
+git mv arquivo/pre-lancamento.html index.html
+# corrija os caminhos: troque ../css/ ../js/ ../assets/ por css/ js/ assets/
 ```
 
-Antes de publicar, remova a linha `<meta name="robots" content="noindex, nofollow" />`
-do `<head>` (ela existe só para a prévia não ser indexada).
+Lembre de remover a meta `robots noindex` da página que voltar a ser a home.
 
-Para revisar localmente antes disso:
+### Endereços antigos
+
+`/teste` e `/institucional` (usados na fase de aprovação) redirecionam para a home,
+via `redirects` no `vercel.json`. Quem tiver o link antigo cai na página certa.
+
+### Testar localmente
 
 ```bash
 python3 -m http.server 8000
-# abra http://localhost:8000/institucional.html
+# home:      http://localhost:8000/
+# arquivada: http://localhost:8000/arquivo/pre-lancamento.html
 ```
-
-Depois é só publicar (push no Git → a Vercel/Netlify rebuilda sozinha). Nenhuma alteração de CSS/JS é necessária: as páginas usam o mesmo design system.
 
 ---
 
@@ -76,10 +73,11 @@ python -m http.server 8000
 
 ```
 nutrire360-site/
-├── index.html                 ← Pré-lançamento (ativo) — Lista VIP
-├── institucional.html         ← Institucional com serviços (pronto, não publicado)
+├── index.html                 ← Institucional com serviços (no ar)
 ├── admin.html                 ← Painel de leads da Lista VIP (senha)
-├── site-pos-lancamento.html   ← Rascunho antigo (obsoleto)
+├── arquivo/                   ← Layouts anteriores, com noindex
+│   ├── pre-lancamento.html    ← Home antiga (Lista VIP + countdown)
+│   └── site-pos-lancamento.html ← Rascunho antigo (obsoleto)
 ├── api/
 │   ├── lead.js                ← POST: salva lead no Vercel KV
 │   └── leads.js               ← GET: lista leads (ADMIN_PASSWORD)
